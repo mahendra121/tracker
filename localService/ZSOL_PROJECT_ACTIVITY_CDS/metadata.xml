@@ -1,0 +1,24 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZSOL_PROJECT_ACTIVITY_CDS" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="ZSOL_PROJECT_ACTIVITYType" sap:label="Hours per Project Activites" sap:content-version="1">
+				<Key><PropertyRef Name="p_sDate"/><PropertyRef Name="p_eDate"/><PropertyRef Name="acti_name"/></Key><Property Name="p_sDate" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="UpperCase" sap:label="CHAR08"/><Property Name="p_eDate" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="UpperCase" sap:label="CHAR08"/><Property Name="acti_name" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Activity Name" sap:quickinfo="TRACKER DE ACTI_NAME"/><Property Name="proj_name" Type="Edm.String" MaxLength="40" sap:label="Project Name" sap:quickinfo="TRACKER DE PROJ_NAME"/><Property Name="hrs" Type="Edm.Decimal" Precision="4" Scale="2"/><NavigationProperty Name="Parameters" Relationship="ZSOL_PROJECT_ACTIVITY_CDS.assoc_453794C6E42CCBF6334DFF8AD537B0B5"
+					FromRole="ToRole_assoc_453794C6E42CCBF6334DFF8AD537B0B5" ToRole="FromRole_assoc_453794C6E42CCBF6334DFF8AD537B0B5" sap:filterable="false"/></EntityType>
+			<EntityType Name="ZSOL_PROJECT_ACTIVITYParameters" sap:semantics="parameters" sap:content-version="1">
+				<Key><PropertyRef Name="p_sDate"/><PropertyRef Name="p_eDate"/></Key><Property Name="p_sDate" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="UpperCase" sap:parameter="mandatory"
+					sap:label="CHAR08" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="p_eDate" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="UpperCase" sap:parameter="mandatory"
+					sap:label="CHAR08" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="Set" Relationship="ZSOL_PROJECT_ACTIVITY_CDS.assoc_453794C6E42CCBF6334DFF8AD537B0B5"
+					FromRole="FromRole_assoc_453794C6E42CCBF6334DFF8AD537B0B5" ToRole="ToRole_assoc_453794C6E42CCBF6334DFF8AD537B0B5"/></EntityType>
+			<Association Name="assoc_453794C6E42CCBF6334DFF8AD537B0B5" sap:content-version="1"><End Type="ZSOL_PROJECT_ACTIVITY_CDS.ZSOL_PROJECT_ACTIVITYParameters" Multiplicity="1"
+				Role="FromRole_assoc_453794C6E42CCBF6334DFF8AD537B0B5"/><End Type="ZSOL_PROJECT_ACTIVITY_CDS.ZSOL_PROJECT_ACTIVITYType" Multiplicity="*" Role="ToRole_assoc_453794C6E42CCBF6334DFF8AD537B0B5"/></Association>
+			<EntityContainer Name="ZSOL_PROJECT_ACTIVITY_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="ZSOL_PROJECT_ACTIVITYSet" EntityType="ZSOL_PROJECT_ACTIVITY_CDS.ZSOL_PROJECT_ACTIVITYType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="ZSOL_PROJECT_ACTIVITY" EntityType="ZSOL_PROJECT_ACTIVITY_CDS.ZSOL_PROJECT_ACTIVITYParameters" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<AssociationSet Name="assoc_453794C6E42CCBF6334DFF8AD537B0B5" Association="ZSOL_PROJECT_ACTIVITY_CDS.assoc_453794C6E42CCBF6334DFF8AD537B0B5"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZSOL_PROJECT_ACTIVITY" Role="FromRole_assoc_453794C6E42CCBF6334DFF8AD537B0B5"/><End EntitySet="ZSOL_PROJECT_ACTIVITYSet" Role="ToRole_assoc_453794C6E42CCBF6334DFF8AD537B0B5"/></AssociationSet>
+			</EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZSOL_PROJECT_ACTIVITY_CDS/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZSOL_PROJECT_ACTIVITY_CDS/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

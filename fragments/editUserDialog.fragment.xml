@@ -1,0 +1,95 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" >
+    <Dialog title="User profile (Edit)" id="user_dialog_edit" contentWidth="1000px" >
+        <content>
+            <f:SimpleForm id="userEditForm" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4"
+				labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3"
+				columnsL="2" columnsM="2" singleContainerFullSize="false" class="sapUiSizeCompact">
+				<f:content>
+					<core:Title text="Search Profile"/>
+					
+					<Label text="By Employee ID"/>
+					<ComboBox
+						id="searchComboEmpId"
+						change="onfetchEmpID"
+						value=""
+						selectedKey=""
+						width="500px"
+						items="{
+							path: 'DTUser>/ZSOL_USER_CDS',
+							sorter: { path: 'user_id' }
+						}">
+						<core:ListItem key="{DTUser>user_id}" text="{DTUser>user_id}" />
+					</ComboBox>
+					<Label text="By Name or CORP ID"/>
+					<ComboBox
+						id="searchComboEmpName"
+						showSecondaryValues= "true"
+						filterSecondaryValues= "true"
+						value=""
+						selectedKey=""
+						change="onfetchEmp"
+						width="500px"
+						items="{
+							path: 'DTUser>/ZSOL_USER_CDS',
+							sorter: { path: 'user_fname' }
+						}">
+						<core:ListItem key="{DTUser>user_id}" text="{DTUser>user_fname}" additionalText="{DTUser>user_uname}"/>
+					</ComboBox>
+					
+					<core:Title text="Profile"/>
+					
+					<Label text="CORP username"/>
+					<Input id="iped_uname" enabled="false" value="" placeholder="e.g. johndoe"/>
+					<Label text="Employee ID"/>
+					<Input id="iped_userid"  enabled="false"  value="" placeholder="e.g. 147147"/>
+					<Label text="First Name"/>
+					<Input  id="iped_fname"  enabled="false" value="" placeholder="John"></Input>
+					<Label text="Email"/>
+					<Input id="iped_email" value="" placeholder="user@capgemini.com"></Input>
+					
+					<Label text="Last Name"/>
+					<Input  id="iped_lname"  enabled="false" value="" placeholder="Doe"></Input>
+					<!--<core:Title text="Profile Attributes"/>-->
+					<Label text="Primary Skill"/>
+					<Select  id="iped_userskill"  enabled="false" items="{path: 'DTSkill>/ZSOL_SKILL_SRV',
+							sorter: { path: 'skill_name' }}">
+						<core:Item key="{DTSkill>skill_id}" text="{DTSkill>skill_name}"/>
+					</Select>
+					<Label text="Lead"/>
+					<Select  id="iped_userlead"  enabled="false" items="{path: 'DTLead>/ZSOL_LEAD_SRV',
+							sorter: { path: 'lead_name' }}">
+						<core:Item key="{DTLead>lead_id}" text="{DTLead>lead_name}"/>
+					</Select>
+					<Label text="Resource Status"/>
+					<Select  id="iped_userrest"  enabled="false" items="{path: 'DTResource>/ZSOL_REST_SRV',
+							sorter: { path: 'rest_name' }}">
+						<core:Item key="{DTResource>rest_id}" text="{DTResource>rest_name}"/>
+					</Select>
+					<Label text="Location"/>
+					<Select  id="iped_userloca"  enabled="false" items="{path: 'DTLocation>/ZSOL_LOCA_SRV',
+							sorter: { path: 'loca_name' }}">
+						<core:Item key="{DTLocation>loca_id}" text="{DTLocation>loca_name}"/>
+					</Select>
+					
+					<Label text="Valid From"/>
+					<DatePicker  id="iped_VALFR"  enabled="true" value="" placeholder="dd/mm/yyyy" displayFormat="dd/MM/YYYY"></DatePicker>
+					
+					<Label text="Valid To"/>
+					<DatePicker  id="iped_VALTO"  enabled="true" value="" placeholder="dd/mm/yyyy" displayFormat="dd/MM/YYYY"></DatePicker>
+					
+					<!--<core:Title text="Miscellaneous information"/>-->
+					<Label text="Status"/>
+					<Switch  id="iped_state"  state="true" enabled="false" />
+					<Label text="is Admin?"/>
+					<Switch  id="iped_admin"  state="false" enabled="true" />
+				</f:content>
+			</f:SimpleForm>
+        </content>
+        <buttons>
+        		<Button text="Save" press="onEditUserSave" type="Emphasized"/>
+        		<Button text="Clear" press="onClearUserEdit" />
+        		<Button text="Delete" press="deletePressUser" type="Reject" />
+                <Button text="Close" press="onCloseUserEdit" />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

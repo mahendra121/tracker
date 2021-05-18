@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:Reference
+		Uri="https://webidecp-p1942966390trial.dispatcher.hanatrial.ondemand.com/destinations/M17/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="ZSOL_NSMART_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="ZSOL_ACTI_SRVType" sap:label="Solution Center Activity Service" sap:content-version="1">
+				<Key><PropertyRef Name="acti_id"/></Key><Property Name="acti_id" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label="Activity ID"
+					sap:quickinfo="TRACKER DE ACTI_ID"/><Property Name="acti_name" Type="Edm.String" MaxLength="40" sap:label="Activity Name" sap:quickinfo="TRACKER DE ACTI_NAME"/><Property Name="valfr" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid From" sap:quickinfo="TRACKER DE VALFR"/><Property Name="valto" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid To" sap:quickinfo="TRACKER DE FOR VALTO"/><Property Name="acti_desc" Type="Edm.String" sap:label="Activity Description" sap:quickinfo="TRACKER DE ACTI_DESC"/><Property Name="flag" Type="Edm.String" MaxLength="2" sap:label="FLAG" sap:quickinfo="TRACKER DE FLAG"/></EntityType>
+			<EntityType Name="ZSOL_LEAD_SRVType" sap:label="Solution Center Lead Service" sap:content-version="1">
+				<Key><PropertyRef Name="lead_id"/></Key><Property Name="lead_id" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label="Lead ID"
+					sap:quickinfo="TRACKER DE LEAD_ID"/><Property Name="lead_name" Type="Edm.String" MaxLength="40" sap:label="Lead Name" sap:quickinfo="TRACKER DE LEAD_NAME"/><Property Name="flag" Type="Edm.String" MaxLength="2" sap:label="FLAG" sap:quickinfo="TRACKER DE FLAG"/></EntityType>
+			<EntityType Name="ZSOL_LOCA_SRVType" sap:label="Solution Center Location Service" sap:content-version="1">
+				<Key><PropertyRef Name="loca_id"/></Key><Property Name="loca_id" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label="Location ID"
+					sap:quickinfo="TRACKER DE LOCA_ID"/><Property Name="loca_name" Type="Edm.String" MaxLength="40" sap:label="Location Name" sap:quickinfo="TRACKER DE LOCA_NAME"/><Property Name="flag" Type="Edm.String" MaxLength="2" sap:label="FLAG" sap:quickinfo="TRACKER DE FLAG"/></EntityType>
+			<EntityType Name="ZSOL_NSMARTType" sap:label="Smart table ndata" sap:content-version="1">
+				<Key><PropertyRef Name="dt_enid"/></Key><Property Name="dt_enid" Type="Edm.String" Nullable="false" MaxLength="32" sap:display-format="UpperCase"/><Property Name="dt_uid" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="User ID"
+					sap:quickinfo="TRACKER DE USER_ID" sap:value-list="standard"/><Property Name="fname" Type="Edm.String" MaxLength="40" sap:label="User's Full Name" sap:quickinfo="TRACKER DE USER_FNAME"/><Property Name="uname" Type="Edm.String" MaxLength="40" sap:label="User Name" sap:quickinfo="TRACKER DE USER_UNAME"/><Property Name="dt_cdat" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Entry Date"
+					sap:quickinfo="TRACKER DE DT_CDAT"/><Property Name="dt_hrs" Type="Edm.Decimal" Precision="4" Scale="2" sap:label="Hours" sap:quickinfo="de for NDATA Daily tracker"/><Property Name="dt_comm" Type="Edm.String" sap:label="Daily Comments" sap:quickinfo="Data Element for Comments"/><Property Name="proj_name" Type="Edm.String" MaxLength="40" sap:label="Project Name" sap:quickinfo="TRACKER DE PROJ_NAME"
+					sap:value-list="standard"/><Property Name="lead_id" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="Lead ID"
+					sap:quickinfo="TRACKER DE LEAD_ID" sap:value-list="standard"/><Property Name="lead_name" Type="Edm.String" MaxLength="40" sap:label="Lead Name" sap:quickinfo="TRACKER DE LEAD_NAME"
+					sap:value-list="standard"/><Property Name="acti_name" Type="Edm.String" MaxLength="40" sap:label="Activity Name" sap:quickinfo="TRACKER DE ACTI_NAME"
+					sap:value-list="standard"/><Property Name="skill_name" Type="Edm.String" MaxLength="40" sap:label="Skill Name" sap:quickinfo="TRACKER DE SKILL_NAME"
+					sap:value-list="standard"/><Property Name="loca_name" Type="Edm.String" MaxLength="40" sap:label="Location Name" sap:quickinfo="TRACKER DE LOCA_NAME"
+					sap:value-list="standard"/><Property Name="rest_name" Type="Edm.String" MaxLength="40" sap:label="Resource Name" sap:quickinfo="TRACKER DE REST_NAME"
+					sap:value-list="standard"/><Property Name="acti_id" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="Activity ID"
+					sap:quickinfo="TRACKER DE ACTI_ID" sap:value-list="standard"/><Property Name="skill_id" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="Skill ID"
+					sap:quickinfo="TRACKER DE SKILL_ID" sap:value-list="standard"/><Property Name="rest_id" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="Rest ID"
+					sap:quickinfo="TRACKER DE REST_ID" sap:value-list="standard"/><Property Name="loca_id" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="Location ID"
+					sap:quickinfo="TRACKER DE LOCA_ID" sap:value-list="standard"/><Property Name="proj_id" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="Project ID"
+					sap:quickinfo="TRACKER DE PROJ_ID" sap:value-list="standard"/><NavigationProperty Name="to_toActi" Relationship="ZSOL_NSMART_CDS.assoc_737F3802778B58402F7ACB5D0D0E02F9"
+					FromRole="FromRole_assoc_737F3802778B58402F7ACB5D0D0E02F9" ToRole="ToRole_assoc_737F3802778B58402F7ACB5D0D0E02F9"/><NavigationProperty Name="to_toLead" Relationship="ZSOL_NSMART_CDS.assoc_4D4191FDD4D2BDEB21328D7AA3377A49"
+					FromRole="FromRole_assoc_4D4191FDD4D2BDEB21328D7AA3377A49" ToRole="ToRole_assoc_4D4191FDD4D2BDEB21328D7AA3377A49"/><NavigationProperty Name="to_toLoca" Relationship="ZSOL_NSMART_CDS.assoc_E87E43B4406219091920EF76152ABC74"
+					FromRole="FromRole_assoc_E87E43B4406219091920EF76152ABC74" ToRole="ToRole_assoc_E87E43B4406219091920EF76152ABC74"/><NavigationProperty Name="to_toProj" Relationship="ZSOL_NSMART_CDS.assoc_5DC4AF880057D891FDD3440F3B32F4EE"
+					FromRole="FromRole_assoc_5DC4AF880057D891FDD3440F3B32F4EE" ToRole="ToRole_assoc_5DC4AF880057D891FDD3440F3B32F4EE"/><NavigationProperty Name="to_torest" Relationship="ZSOL_NSMART_CDS.assoc_2AF518B7D66EAA8621EF9F6BEBCA5DF9"
+					FromRole="FromRole_assoc_2AF518B7D66EAA8621EF9F6BEBCA5DF9" ToRole="ToRole_assoc_2AF518B7D66EAA8621EF9F6BEBCA5DF9"/><NavigationProperty Name="to_toSkill" Relationship="ZSOL_NSMART_CDS.assoc_85848AF48BA3899FC5CA9E4E53BF883C"
+					FromRole="FromRole_assoc_85848AF48BA3899FC5CA9E4E53BF883C" ToRole="ToRole_assoc_85848AF48BA3899FC5CA9E4E53BF883C"/><NavigationProperty Name="to_toUser" Relationship="ZSOL_NSMART_CDS.assoc_29C4F05D6AAAE78DC3EA0BED5AA534E8"
+					FromRole="FromRole_assoc_29C4F05D6AAAE78DC3EA0BED5AA534E8" ToRole="ToRole_assoc_29C4F05D6AAAE78DC3EA0BED5AA534E8"/><NavigationProperty Name="to_toUserProfile" Relationship="ZSOL_NSMART_CDS.assoc_604F45D385C4D5118543AE77C4E8E653"
+					FromRole="FromRole_assoc_604F45D385C4D5118543AE77C4E8E653" ToRole="ToRole_assoc_604F45D385C4D5118543AE77C4E8E653"/></EntityType>
+			<EntityType Name="ZSOL_PROJ_SRVType" sap:label="Solution Center Project Service" sap:content-version="1">
+				<Key><PropertyRef Name="proj_id"/></Key><Property Name="proj_id" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label="Project ID"
+					sap:quickinfo="TRACKER DE PROJ_ID"/><Property Name="proj_name" Type="Edm.String" MaxLength="40" sap:label="Project Name" sap:quickinfo="TRACKER DE PROJ_NAME"/><Property Name="valfr" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid From" sap:quickinfo="TRACKER DE VALFR"/><Property Name="valto" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid To" sap:quickinfo="TRACKER DE FOR VALTO"/><Property Name="proj_desc" Type="Edm.String" sap:label="Project Description" sap:quickinfo="TRACKER DE PROJ_DESC"/><Property Name="flag" Type="Edm.String" MaxLength="2" sap:label="FLAG" sap:quickinfo="TRACKER DE FLAG"/></EntityType>
+			<EntityType Name="ZSOL_REST_SRVType" sap:label="Solution Center Resource Type Service" sap:content-version="1">
+				<Key><PropertyRef Name="rest_id"/></Key><Property Name="rest_id" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label="Rest ID"
+					sap:quickinfo="TRACKER DE REST_ID"/><Property Name="rest_name" Type="Edm.String" MaxLength="40" sap:label="Resource Name" sap:quickinfo="TRACKER DE REST_NAME"/><Property Name="flag" Type="Edm.String" MaxLength="2" sap:label="FLAG" sap:quickinfo="TRACKER DE FLAG"/></EntityType>
+			<EntityType Name="ZSOL_SKILL_SRVType" sap:label="Solution Center Skill Service" sap:content-version="1">
+				<Key><PropertyRef Name="skill_id"/></Key><Property Name="skill_id" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label="Skill ID"
+					sap:quickinfo="TRACKER DE SKILL_ID"/><Property Name="skill_name" Type="Edm.String" MaxLength="40" sap:label="Skill Name" sap:quickinfo="TRACKER DE SKILL_NAME"/><Property Name="flag" Type="Edm.String" MaxLength="2" sap:label="FLAG" sap:quickinfo="TRACKER DE FLAG"/></EntityType>
+			<EntityType Name="ZSOL_UPRO_R_SRVType" sap:label="Read Service for UPRO" sap:content-version="1">
+				<Key><PropertyRef Name="user_id"/></Key><Property Name="user_id" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label="User ID"
+					sap:quickinfo="TRACKER DE USER_ID"/><Property Name="rest_id" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="Rest ID"
+					sap:quickinfo="TRACKER DE REST_ID"/><Property Name="lead_id" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="Lead ID"
+					sap:quickinfo="TRACKER DE LEAD_ID"/><Property Name="skill_id" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="Skill ID"
+					sap:quickinfo="TRACKER DE SKILL_ID"/><Property Name="loca_id" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="Location ID"
+					sap:quickinfo="TRACKER DE LOCA_ID"/><Property Name="user_fname" Type="Edm.String" MaxLength="40" sap:label="User's Full Name" sap:quickinfo="TRACKER DE USER_FNAME"/><Property Name="user_uname" Type="Edm.String" MaxLength="40" sap:label="User Name" sap:quickinfo="TRACKER DE USER_UNAME"/><Property Name="user_email" Type="Edm.String" MaxLength="241" sap:label="E-Mail Address"/><Property Name="rest_name" Type="Edm.String" MaxLength="40" sap:label="Resource Name" sap:quickinfo="TRACKER DE REST_NAME"/><Property Name="lead_name" Type="Edm.String" MaxLength="40" sap:label="Lead Name" sap:quickinfo="TRACKER DE LEAD_NAME"/><Property Name="skill_name" Type="Edm.String" MaxLength="40" sap:label="Skill Name" sap:quickinfo="TRACKER DE SKILL_NAME"/><Property Name="loca_name" Type="Edm.String" MaxLength="40" sap:label="Location Name" sap:quickinfo="TRACKER DE LOCA_NAME"/><Property Name="flag" Type="Edm.String" MaxLength="2" sap:label="FLAG" sap:quickinfo="TRACKER DE FLAG"/></EntityType>
+			<EntityType Name="ZSOL_USER_CDSType" sap:label="Solution Center Users CDS" sap:content-version="1">
+				<Key><PropertyRef Name="user_id"/></Key><Property Name="user_id" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label="User ID"
+					sap:quickinfo="TRACKER DE USER_ID"/><Property Name="user_fname" Type="Edm.String" MaxLength="40" sap:label="User's Full Name" sap:quickinfo="TRACKER DE USER_FNAME"/><Property Name="user_uname" Type="Edm.String" MaxLength="40" sap:label="User Name" sap:quickinfo="TRACKER DE USER_UNAME"/><Property Name="user_psw" Type="Edm.String" sap:label="User Password" sap:quickinfo="TRACKER DE USER_PSW"/><Property Name="flag" Type="Edm.String" MaxLength="2" sap:label="FLAG" sap:quickinfo="TRACKER DE FLAG"/><Property Name="valfr" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid From" sap:quickinfo="TRACKER DE VALFR"/><Property Name="valto" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid To" sap:quickinfo="TRACKER DE FOR VALTO"/><Property Name="user_email" Type="Edm.String" MaxLength="241" sap:label="E-Mail Address"/></EntityType>
+			<Association Name="assoc_4D4191FDD4D2BDEB21328D7AA3377A49" sap:content-version="1"><End Type="ZSOL_NSMART_CDS.ZSOL_NSMARTType" Multiplicity="1" Role="FromRole_assoc_4D4191FDD4D2BDEB21328D7AA3377A49"/><End Type="ZSOL_NSMART_CDS.ZSOL_LEAD_SRVType" Multiplicity="0..1" Role="ToRole_assoc_4D4191FDD4D2BDEB21328D7AA3377A49"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_4D4191FDD4D2BDEB21328D7AA3377A49"><PropertyRef Name="lead_id"/></Principal>
+					<Dependent Role="FromRole_assoc_4D4191FDD4D2BDEB21328D7AA3377A49"><PropertyRef Name="lead_id"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_E87E43B4406219091920EF76152ABC74" sap:content-version="1"><End Type="ZSOL_NSMART_CDS.ZSOL_NSMARTType" Multiplicity="1" Role="FromRole_assoc_E87E43B4406219091920EF76152ABC74"/><End Type="ZSOL_NSMART_CDS.ZSOL_LOCA_SRVType" Multiplicity="0..1" Role="ToRole_assoc_E87E43B4406219091920EF76152ABC74"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_E87E43B4406219091920EF76152ABC74"><PropertyRef Name="loca_id"/></Principal>
+					<Dependent Role="FromRole_assoc_E87E43B4406219091920EF76152ABC74"><PropertyRef Name="loca_id"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_5DC4AF880057D891FDD3440F3B32F4EE" sap:content-version="1"><End Type="ZSOL_NSMART_CDS.ZSOL_NSMARTType" Multiplicity="1" Role="FromRole_assoc_5DC4AF880057D891FDD3440F3B32F4EE"/><End Type="ZSOL_NSMART_CDS.ZSOL_PROJ_SRVType" Multiplicity="0..1" Role="ToRole_assoc_5DC4AF880057D891FDD3440F3B32F4EE"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_5DC4AF880057D891FDD3440F3B32F4EE"><PropertyRef Name="proj_id"/></Principal>
+					<Dependent Role="FromRole_assoc_5DC4AF880057D891FDD3440F3B32F4EE"><PropertyRef Name="proj_id"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_2AF518B7D66EAA8621EF9F6BEBCA5DF9" sap:content-version="1"><End Type="ZSOL_NSMART_CDS.ZSOL_NSMARTType" Multiplicity="1" Role="FromRole_assoc_2AF518B7D66EAA8621EF9F6BEBCA5DF9"/><End Type="ZSOL_NSMART_CDS.ZSOL_REST_SRVType" Multiplicity="0..1" Role="ToRole_assoc_2AF518B7D66EAA8621EF9F6BEBCA5DF9"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_2AF518B7D66EAA8621EF9F6BEBCA5DF9"><PropertyRef Name="rest_id"/></Principal>
+					<Dependent Role="FromRole_assoc_2AF518B7D66EAA8621EF9F6BEBCA5DF9"><PropertyRef Name="rest_id"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_85848AF48BA3899FC5CA9E4E53BF883C" sap:content-version="1"><End Type="ZSOL_NSMART_CDS.ZSOL_NSMARTType" Multiplicity="1" Role="FromRole_assoc_85848AF48BA3899FC5CA9E4E53BF883C"/><End Type="ZSOL_NSMART_CDS.ZSOL_SKILL_SRVType" Multiplicity="0..1" Role="ToRole_assoc_85848AF48BA3899FC5CA9E4E53BF883C"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_85848AF48BA3899FC5CA9E4E53BF883C"><PropertyRef Name="skill_id"/></Principal>
+					<Dependent Role="FromRole_assoc_85848AF48BA3899FC5CA9E4E53BF883C"><PropertyRef Name="skill_id"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_29C4F05D6AAAE78DC3EA0BED5AA534E8" sap:content-version="1"><End Type="ZSOL_NSMART_CDS.ZSOL_NSMARTType" Multiplicity="1" Role="FromRole_assoc_29C4F05D6AAAE78DC3EA0BED5AA534E8"/><End Type="ZSOL_NSMART_CDS.ZSOL_USER_CDSType" Multiplicity="0..1" Role="ToRole_assoc_29C4F05D6AAAE78DC3EA0BED5AA534E8"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_29C4F05D6AAAE78DC3EA0BED5AA534E8"><PropertyRef Name="user_id"/></Principal>
+					<Dependent Role="FromRole_assoc_29C4F05D6AAAE78DC3EA0BED5AA534E8"><PropertyRef Name="dt_uid"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_604F45D385C4D5118543AE77C4E8E653" sap:content-version="1"><End Type="ZSOL_NSMART_CDS.ZSOL_NSMARTType" Multiplicity="1" Role="FromRole_assoc_604F45D385C4D5118543AE77C4E8E653"/><End Type="ZSOL_NSMART_CDS.ZSOL_UPRO_R_SRVType" Multiplicity="0..1" Role="ToRole_assoc_604F45D385C4D5118543AE77C4E8E653"/></Association>
+			<Association Name="assoc_737F3802778B58402F7ACB5D0D0E02F9" sap:content-version="1"><End Type="ZSOL_NSMART_CDS.ZSOL_NSMARTType" Multiplicity="1" Role="FromRole_assoc_737F3802778B58402F7ACB5D0D0E02F9"/><End Type="ZSOL_NSMART_CDS.ZSOL_ACTI_SRVType" Multiplicity="0..1" Role="ToRole_assoc_737F3802778B58402F7ACB5D0D0E02F9"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_737F3802778B58402F7ACB5D0D0E02F9"><PropertyRef Name="acti_id"/></Principal>
+					<Dependent Role="FromRole_assoc_737F3802778B58402F7ACB5D0D0E02F9"><PropertyRef Name="acti_id"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="ZSOL_NSMART_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="ZSOL_ACTI_SRV" EntityType="ZSOL_NSMART_CDS.ZSOL_ACTI_SRVType" sap:content-version="1"/><EntitySet Name="ZSOL_LEAD_SRV" EntityType="ZSOL_NSMART_CDS.ZSOL_LEAD_SRVType" sap:content-version="1"/><EntitySet Name="ZSOL_LOCA_SRV" EntityType="ZSOL_NSMART_CDS.ZSOL_LOCA_SRVType" sap:content-version="1"/><EntitySet Name="ZSOL_NSMART" EntityType="ZSOL_NSMART_CDS.ZSOL_NSMARTType" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:content-version="1"/><EntitySet Name="ZSOL_PROJ_SRV" EntityType="ZSOL_NSMART_CDS.ZSOL_PROJ_SRVType" sap:content-version="1"/><EntitySet Name="ZSOL_REST_SRV" EntityType="ZSOL_NSMART_CDS.ZSOL_REST_SRVType" sap:content-version="1"/><EntitySet Name="ZSOL_SKILL_SRV" EntityType="ZSOL_NSMART_CDS.ZSOL_SKILL_SRVType" sap:content-version="1"/><EntitySet Name="ZSOL_UPRO_R_SRV" EntityType="ZSOL_NSMART_CDS.ZSOL_UPRO_R_SRVType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZSOL_USER_CDS" EntityType="ZSOL_NSMART_CDS.ZSOL_USER_CDSType" sap:content-version="1"/>
+				<AssociationSet Name="assoc_4D4191FDD4D2BDEB21328D7AA3377A49" Association="ZSOL_NSMART_CDS.assoc_4D4191FDD4D2BDEB21328D7AA3377A49"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZSOL_NSMART" Role="FromRole_assoc_4D4191FDD4D2BDEB21328D7AA3377A49"/><End EntitySet="ZSOL_LEAD_SRV" Role="ToRole_assoc_4D4191FDD4D2BDEB21328D7AA3377A49"/></AssociationSet>
+				<AssociationSet Name="assoc_E87E43B4406219091920EF76152ABC74" Association="ZSOL_NSMART_CDS.assoc_E87E43B4406219091920EF76152ABC74"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZSOL_NSMART" Role="FromRole_assoc_E87E43B4406219091920EF76152ABC74"/><End EntitySet="ZSOL_LOCA_SRV" Role="ToRole_assoc_E87E43B4406219091920EF76152ABC74"/></AssociationSet>
+				<AssociationSet Name="assoc_5DC4AF880057D891FDD3440F3B32F4EE" Association="ZSOL_NSMART_CDS.assoc_5DC4AF880057D891FDD3440F3B32F4EE"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZSOL_NSMART" Role="FromRole_assoc_5DC4AF880057D891FDD3440F3B32F4EE"/><End EntitySet="ZSOL_PROJ_SRV" Role="ToRole_assoc_5DC4AF880057D891FDD3440F3B32F4EE"/></AssociationSet>
+				<AssociationSet Name="assoc_2AF518B7D66EAA8621EF9F6BEBCA5DF9" Association="ZSOL_NSMART_CDS.assoc_2AF518B7D66EAA8621EF9F6BEBCA5DF9"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZSOL_NSMART" Role="FromRole_assoc_2AF518B7D66EAA8621EF9F6BEBCA5DF9"/><End EntitySet="ZSOL_REST_SRV" Role="ToRole_assoc_2AF518B7D66EAA8621EF9F6BEBCA5DF9"/></AssociationSet>
+				<AssociationSet Name="assoc_604F45D385C4D5118543AE77C4E8E653" Association="ZSOL_NSMART_CDS.assoc_604F45D385C4D5118543AE77C4E8E653"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZSOL_NSMART" Role="FromRole_assoc_604F45D385C4D5118543AE77C4E8E653"/><End EntitySet="ZSOL_UPRO_R_SRV" Role="ToRole_assoc_604F45D385C4D5118543AE77C4E8E653"/></AssociationSet>
+				<AssociationSet Name="assoc_737F3802778B58402F7ACB5D0D0E02F9" Association="ZSOL_NSMART_CDS.assoc_737F3802778B58402F7ACB5D0D0E02F9"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZSOL_NSMART" Role="FromRole_assoc_737F3802778B58402F7ACB5D0D0E02F9"/><End EntitySet="ZSOL_ACTI_SRV" Role="ToRole_assoc_737F3802778B58402F7ACB5D0D0E02F9"/></AssociationSet>
+				<AssociationSet Name="assoc_85848AF48BA3899FC5CA9E4E53BF883C" Association="ZSOL_NSMART_CDS.assoc_85848AF48BA3899FC5CA9E4E53BF883C"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZSOL_NSMART" Role="FromRole_assoc_85848AF48BA3899FC5CA9E4E53BF883C"/><End EntitySet="ZSOL_SKILL_SRV" Role="ToRole_assoc_85848AF48BA3899FC5CA9E4E53BF883C"/></AssociationSet>
+				<AssociationSet Name="assoc_29C4F05D6AAAE78DC3EA0BED5AA534E8" Association="ZSOL_NSMART_CDS.assoc_29C4F05D6AAAE78DC3EA0BED5AA534E8"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZSOL_NSMART" Role="FromRole_assoc_29C4F05D6AAAE78DC3EA0BED5AA534E8"/><End EntitySet="ZSOL_USER_CDS" Role="ToRole_assoc_29C4F05D6AAAE78DC3EA0BED5AA534E8"/></AssociationSet>
+			</EntityContainer>
+			<Annotations Target="ZSOL_NSMART_CDS.ZSOL_NSMARTType/dt_uid" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Solution Center Users CDS"/><PropertyValue Property="CollectionPath" String="ZSOL_USER_CDS"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="dt_uid"/><PropertyValue Property="ValueListProperty" String="user_id"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="user_fname"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="user_uname"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="user_psw"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="flag"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="valfr"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="valto"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="user_email"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZSOL_NSMART_CDS.ZSOL_NSMARTType/proj_name" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Solution Center Project Service"/><PropertyValue Property="CollectionPath" String="ZSOL_PROJ_SRV"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="proj_id"/><PropertyValue Property="ValueListProperty" String="proj_id"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="proj_name"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="valfr"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="valto"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="proj_desc"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="flag"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZSOL_NSMART_CDS.ZSOL_NSMARTType/lead_id" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Solution Center Lead Service"/><PropertyValue Property="CollectionPath" String="ZSOL_LEAD_SRV"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="lead_id"/><PropertyValue Property="ValueListProperty" String="lead_id"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="lead_name"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="flag"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZSOL_NSMART_CDS.ZSOL_NSMARTType/lead_name" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Solution Center Lead Service"/><PropertyValue Property="CollectionPath" String="ZSOL_LEAD_SRV"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="lead_id"/><PropertyValue Property="ValueListProperty" String="lead_id"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="lead_name"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="flag"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZSOL_NSMART_CDS.ZSOL_NSMARTType/acti_name" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Solution Center Activity Service"/><PropertyValue Property="CollectionPath" String="ZSOL_ACTI_SRV"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="acti_id"/><PropertyValue Property="ValueListProperty" String="acti_id"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="acti_name"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="valfr"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="valto"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="acti_desc"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="flag"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZSOL_NSMART_CDS.ZSOL_NSMARTType/skill_name" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Solution Center Skill Service"/><PropertyValue Property="CollectionPath" String="ZSOL_SKILL_SRV"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="skill_id"/><PropertyValue Property="ValueListProperty" String="skill_id"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="skill_name"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="flag"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZSOL_NSMART_CDS.ZSOL_NSMARTType/loca_name" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Solution Center Location Service"/><PropertyValue Property="CollectionPath" String="ZSOL_LOCA_SRV"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="loca_id"/><PropertyValue Property="ValueListProperty" String="loca_id"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="loca_name"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="flag"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZSOL_NSMART_CDS.ZSOL_NSMARTType/rest_name" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Solution Center Resource Type Service"/><PropertyValue Property="CollectionPath" String="ZSOL_REST_SRV"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="rest_id"/><PropertyValue Property="ValueListProperty" String="rest_id"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="rest_name"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="flag"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZSOL_NSMART_CDS.ZSOL_NSMARTType/acti_id" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Solution Center Activity Service"/><PropertyValue Property="CollectionPath" String="ZSOL_ACTI_SRV"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="acti_id"/><PropertyValue Property="ValueListProperty" String="acti_id"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="acti_name"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="valfr"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="valto"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="acti_desc"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="flag"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZSOL_NSMART_CDS.ZSOL_NSMARTType/skill_id" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Solution Center Skill Service"/><PropertyValue Property="CollectionPath" String="ZSOL_SKILL_SRV"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="skill_id"/><PropertyValue Property="ValueListProperty" String="skill_id"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="skill_name"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="flag"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZSOL_NSMART_CDS.ZSOL_NSMARTType/rest_id" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Solution Center Resource Type Service"/><PropertyValue Property="CollectionPath" String="ZSOL_REST_SRV"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="rest_id"/><PropertyValue Property="ValueListProperty" String="rest_id"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="rest_name"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="flag"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZSOL_NSMART_CDS.ZSOL_NSMARTType/loca_id" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Solution Center Location Service"/><PropertyValue Property="CollectionPath" String="ZSOL_LOCA_SRV"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="loca_id"/><PropertyValue Property="ValueListProperty" String="loca_id"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="loca_name"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="flag"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZSOL_NSMART_CDS.ZSOL_NSMARTType/proj_id" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Solution Center Project Service"/><PropertyValue Property="CollectionPath" String="ZSOL_PROJ_SRV"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="proj_id"/><PropertyValue Property="ValueListProperty" String="proj_id"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="proj_name"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="valfr"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="valto"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="proj_desc"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="flag"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations><atom:link rel="self"
+				href="https://webidecp-p1942966390trial.dispatcher.hanatrial.ondemand.com/destinations/M17/sap/opu/odata/sap/ZSOL_NSMART_CDS/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version"
+				href="https://webidecp-p1942966390trial.dispatcher.hanatrial.ondemand.com/destinations/M17/sap/opu/odata/sap/ZSOL_NSMART_CDS/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,38 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZDT_DATA_READ_CDS" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="ZDT_DATA_READType" sap:label="Data Table Read Only CDS" sap:content-version="1">
+				<Key><PropertyRef Name="en_id"/></Key><Property Name="en_id" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Entry Id"
+					sap:quickinfo="EN ID DE"/><Property Name="emp_id" Type="Edm.String" MaxLength="6" sap:display-format="UpperCase" sap:label="Employee Id"
+					sap:quickinfo="EMP_ID Data Element" sap:value-list="standard"/><Property Name="en_date" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Date"/><Property Name="proj_name" Type="Edm.String" sap:label="Project Name" sap:quickinfo="Project Name DE"/><Property Name="act_name" Type="Edm.String" sap:label="Activity Name" sap:quickinfo="Activity Value DE"/><Property Name="en_hours" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Hours" sap:quickinfo="Hours DE"/><Property Name="en_comm" Type="Edm.String" sap:label="Comments" sap:quickinfo="Comments DE"/><Property Name="full_name" Type="Edm.String" MaxLength="40" sap:label="Employee Name" sap:quickinfo="Employee Name (Daily Tracker)"/><Property Name="uname" Type="Edm.String" MaxLength="10" sap:label="User Name" sap:quickinfo="Username data element"/><NavigationProperty Name="toUserInfo" Relationship="ZDT_DATA_READ_CDS.assoc_14302E64CDE2D39248BDD56DC494E04F"
+					FromRole="FromRole_assoc_14302E64CDE2D39248BDD56DC494E04F" ToRole="ToRole_assoc_14302E64CDE2D39248BDD56DC494E04F"/></EntityType>
+			<EntityType Name="ZSOL_USERS_NType" sap:content-version="1">
+				<Key><PropertyRef Name="EMP_ID"/></Key><Property Name="EMP_ID" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="UpperCase" sap:label="Employee Id"/><Property Name="UNAME" Type="Edm.String" MaxLength="10" sap:label="User Name"/><Property Name="ENAME" Type="Edm.String" MaxLength="40" sap:label="Employee Name"/><Property Name="PASS_HASH" Type="Edm.String" MaxLength="40" sap:label="Initial Password"/></EntityType>
+			<Association Name="assoc_14302E64CDE2D39248BDD56DC494E04F" sap:content-version="1"><End Type="ZDT_DATA_READ_CDS.ZDT_DATA_READType" Multiplicity="1" Role="FromRole_assoc_14302E64CDE2D39248BDD56DC494E04F"/><End Type="ZDT_DATA_READ_CDS.ZSOL_USERS_NType" Multiplicity="0..1" Role="ToRole_assoc_14302E64CDE2D39248BDD56DC494E04F"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_14302E64CDE2D39248BDD56DC494E04F"><PropertyRef Name="EMP_ID"/></Principal>
+					<Dependent Role="FromRole_assoc_14302E64CDE2D39248BDD56DC494E04F"><PropertyRef Name="emp_id"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="ZDT_DATA_READ_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="ZDT_DATA_READ" EntityType="ZDT_DATA_READ_CDS.ZDT_DATA_READType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZSOL_USERS_N" EntityType="ZDT_DATA_READ_CDS.ZSOL_USERS_NType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/>
+				<AssociationSet Name="assoc_14302E64CDE2D39248BDD56DC494E04F" Association="ZDT_DATA_READ_CDS.assoc_14302E64CDE2D39248BDD56DC494E04F"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZDT_DATA_READ" Role="FromRole_assoc_14302E64CDE2D39248BDD56DC494E04F"/><End EntitySet="ZSOL_USERS_N" Role="ToRole_assoc_14302E64CDE2D39248BDD56DC494E04F"/></AssociationSet>
+			</EntityContainer>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZDT_DATA_READ_CDS.ZDT_DATA_READType/emp_id">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String=""/><PropertyValue Property="CollectionPath" String="ZSOL_USERS_N"/><PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="emp_id"/><PropertyValue Property="ValueListProperty" String="EMP_ID"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZDT_DATA_READ_CDS/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZDT_DATA_READ_CDS/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

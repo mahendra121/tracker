@@ -1,0 +1,577 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"id": "TrackerEntry.TrackerEntry",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponentForManifest",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"ZSOL_DT_DATA_SRV_CDS": {
+				"uri": "/sap/opu/odata/sap/ZSOL_DT_DATA_SRV_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZSOL_DT_DATA_SRV_CDS/metadata.xml"
+				}
+			},
+			"ZSOL_USER_CDS_CDS": {
+				"uri": "/sap/opu/odata/sap/ZSOL_USER_CDS_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZSOL_USER_CDS_CDS/metadata.xml"
+				}
+			},
+			"ZSOL_ACTI_SRV_CDS": {
+				"uri": "/sap/opu/odata/sap/ZSOL_ACTI_SRV_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZSOL_ACTI_SRV_CDS/metadata.xml"
+				}
+			},
+			"ZSOL_PROJ_SRV_CDS": {
+				"uri": "/sap/opu/odata/sap/ZSOL_PROJ_SRV_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZSOL_PROJ_SRV_CDS/metadata.xml"
+				}
+			},
+			"ZSOL_UPRO_SRV_CDS": {
+				"uri": "/sap/opu/odata/sap/ZSOL_UPRO_SRV_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZSOL_UPRO_SRV_CDS/metadata.xml"
+				}
+			},
+			"ZSOL_UPRO_R_SRV_CDS": {
+				"uri": "/sap/opu/odata/sap/ZSOL_UPRO_R_SRV_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZSOL_UPRO_R_SRV_CDS/metadata.xml"
+				}
+			},
+			"ZSOL_DT_DATA_R_SRV_CDS": {
+				"uri": "/sap/opu/odata/sap/ZSOL_DT_DATA_R_SRV_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZSOL_DT_DATA_R_SRV_CDS/metadata.xml"
+				}
+			},
+			"ZSOL_LEAD_SRV_CDS": {
+				"uri": "/sap/opu/odata/sap/ZSOL_LEAD_SRV_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZSOL_LEAD_SRV_CDS/metadata.xml"
+				}
+			},
+			"ZSOL_LOCA_SRV_CDS": {
+				"uri": "/sap/opu/odata/sap/ZSOL_LOCA_SRV_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZSOL_LOCA_SRV_CDS/metadata.xml"
+				}
+			},
+			"ZSOL_SKILL_SRV_CDS": {
+				"uri": "/sap/opu/odata/sap/ZSOL_SKILL_SRV_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZSOL_SKILL_SRV_CDS/metadata.xml"
+				}
+			},
+			"ZSOL_SMART_SRV_CDS": {
+				"uri": "/sap/opu/odata/sap/ZSOL_SMART_SRV_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZSOL_SMART_SRV_CDS/metadata.xml"
+				}
+			},
+			"ZSOL_REST_SRV_CDS": {
+				"uri": "/sap/opu/odata/sap/ZSOL_REST_SRV_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZSOL_REST_SRV_CDS/metadata.xml"
+				}
+			},
+			"ZSOL_DASHF_SRV_CDS": {
+				"uri": "/sap/opu/odata/sap/ZSOL_DASHF_SRV_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZSOL_DASHF_SRV_CDS/metadata.xml"
+				}
+			},
+			"ZSOL_DASHT_SRV_CDS": {
+				"uri": "/sap/opu/odata/sap/ZSOL_DASHT_SRV_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZSOL_DASHT_SRV_CDS/metadata.xml"
+				}
+			},
+			"ZSOL_NDATA_SRV_CDS": {
+				"uri": "/sap/opu/odata/sap/ZSOL_NDATA_SRV_CDS/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/ZSOL_NDATA_SRV_CDS/metadata.xml"
+				}
+			},
+			"ZSOL_NSMART_CDS": {
+				"uri": "/sap/opu/odata/sap/ZSOL_NSMART_CDS/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/ZSOL_NSMART_CDS/metadata.xml"
+				}
+			},
+			"ZTRACKER_SRV": {
+				"uri": "/sap/opu/odata/sap/ZTRACKER_SRV/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/ZTRACKER_SRV/metadata.xml"
+				}
+			},
+			"ZSOL_ACTIVE_USERS_CDS": {
+				"uri": "/sap/opu/odata/sap/ZSOL_ACTIVE_USERS_CDS/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/ZSOL_ACTIVE_USERS_CDS/metadata.xml"
+				}
+			},
+			"ZSOL_PROJ_HRS_CDS": {
+				"uri": "/sap/opu/odata/sap/ZSOL_PROJ_HRS_CDS/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/ZSOL_PROJ_HRS_CDS/metadata.xml"
+				}
+			},
+			"ZSOL_PROJECT_ACTIVITY_CDS": {
+				"uri": "/sap/opu/odata/sap/ZSOL_PROJECT_ACTIVITY_CDS/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/ZSOL_PROJECT_ACTIVITY_CDS/metadata.xml"
+				}
+			},
+			"ZSOL_USER_ACTIVITY_CDS": {
+				"uri": "/sap/opu/odata/sap/ZSOL_USER_ACTIVITY_CDS/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/ZSOL_USER_ACTIVITY_CDS/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": ["sap_hcb", "sap_belize"]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "TrackerEntry.TrackerEntry.view.trackerView",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.m": {},
+				"sap.ui.core": {},
+				"sap.ui.layout": {
+					"lazy": true
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "TrackerEntry.TrackerEntry.i18n.i18n"
+				}
+			},
+			"DTData": {
+				"uri": "/sap/opu/odata/sap/ZSOL_DT_DATA_SRV_CDS/",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZSOL_DT_DATA_SRV_CDS",
+				"preload": true
+			},
+			"DTUser": {
+				"uri": "/sap/opu/odata/sap/ZSOL_USER_CDS_CDS/",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZSOL_USER_CDS_CDS",
+				"preload": true
+			},
+			"DTActivity": {
+				"uri": "/sap/opu/odata/sap/ZSOL_ACTI_SRV_CDS/",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZSOL_ACTI_SRV_CDS",
+				"preload": true
+			},
+			"DTProject": {
+				"uri": "/sap/opu/odata/sap/ZSOL_PROJ_SRV_CDS/",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZSOL_PROJ_SRV_CDS",
+				"preload": true
+			},
+			"DTHeader": {
+				"uri": "/sap/opu/odata/sap/ZSOL_UPRO_SRV_CDS/",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request",
+					"useBatch": false
+				},
+				"dataSource": "ZSOL_UPRO_SRV_CDS",
+				"preload": true
+			},
+			"DTHeaderRead": {
+				"uri": "/sap/opu/odata/sap/ZSOL_UPRO_R_SRV_CDS/",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZSOL_UPRO_R_SRV_CDS",
+				"preload": true
+			},
+			"DTDataRead": {
+				"uri": "/sap/opu/odata/sap/ZSOL_DT_DATA_R_SRV_CDS/",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZSOL_DT_DATA_R_SRV_CDS",
+				"preload": true
+			},
+			"DTLead": {
+				"uri": "/sap/opu/odata/sap/ZSOL_LEAD_SRV_CDS/",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZSOL_LEAD_SRV_CDS",
+				"preload": true
+			},
+			"DTLocation": {
+				"uri": "/sap/opu/odata/sap/ZSOL_LOCA_SRV_CDS/",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZSOL_LOCA_SRV_CDS",
+				"preload": true
+			},
+			"DTSkill": {
+				"uri": "/sap/opu/odata/sap/ZSOL_SKILL_SRV_CDS/",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZSOL_SKILL_SRV_CDS",
+				"preload": true
+			},
+			"SmartTab": {
+				"uri": "/sap/opu/odata/sap/ZSOL_SMART_SRV_CDS/",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZSOL_SMART_SRV_CDS",
+				"preload": true
+			},
+			"DTResource": {
+				"uri": "/sap/opu/odata/sap/ZSOL_REST_SRV_CDS/",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZSOL_REST_SRV_CDS",
+				"preload": true
+			},
+			"HeaderR": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZSOL_UPRO_R_SRV_CDS",
+				"preload": true
+			},
+			"HeaderW": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZSOL_UPRO_SRV_CDS",
+				"preload": true
+			},
+			"DTDashF": {
+				"uri": "/sap/opu/odata/sap/ZSOL_DASHF_SRV_CDS/",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request",
+					"useBatch": false
+				},
+				"dataSource": "ZSOL_DASHF_SRV_CDS",
+				"preload": true
+			},
+			"DTDashT": {
+				"uri": "/sap/opu/odata/sap/ZSOL_DASHT_SRV_CDS/",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZSOL_DASHT_SRV_CDS",
+				"preload": true
+			},
+			"NDataModel": {
+				"uri": "/sap/opu/odata/sap/ZSOL_NDATA_SRV_CDS/",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZSOL_NDATA_SRV_CDS",
+				"preload": true
+			},
+			"NSmartModel": {
+				"uri": "/sap/opu/odata/sap/ZSOL_NSMART_CDS/",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZSOL_NSMART_CDS",
+				"preload": true
+			},
+			"mailTracker": {
+				"uri": "/sap/opu/odata/sap/ZTRACKER_SRV/",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request",
+					"useBatch": true
+				},
+				"dataSource": "ZTRACKER_SRV",
+				"preload": true
+			},
+			"DTActiveUsers": {
+				"uri": "/sap/opu/odata/sap/ZSOL_ACTIVE_USERS_CDS/",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZSOL_ACTIVE_USERS_CDS",
+				"preload": true
+			},
+			"zsol_proj": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZSOL_PROJ_HRS_CDS",
+				"preload": true
+			},
+			"zsol_activity": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZSOL_PROJECT_ACTIVITY_CDS",
+				"preload": true
+			},
+			"zsol_users": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZSOL_USER_ACTIVITY_CDS",
+				"preload": true
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "TrackerEntry.TrackerEntry.view",
+				"controlAggregation": "pages",
+				"controlId": "myapp",
+				"transition": "slide",
+				"bypassed": {
+					"target": "nouserLogin"
+				}
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "Activity",
+				"target": "Activity"
+			}, {
+				"pattern": "inactiveLogin",
+				"name": "inactiveLogin",
+				"target": "inactiveLogin"
+			}, {
+				"pattern": "nouserLogin",
+				"name": "nouserLogin",
+				"target": "nouserLogin"
+			}, {
+				"pattern": "adminLogin",
+				"name": "adminLogin",
+				"target": "adminLogin"
+			}],
+			"targets": {
+				"inactiveLogin": {
+					"viewName": "inactiveLogin",
+					"viewLevel": 0,
+					"routerClass": "sap.m.routing.Router",
+					"viewType": "XML",
+					"viewPath": "TrackerEntry.TrackerEntry.view",
+					"controlAggregation": "pages",
+					"controlId": "myapp",
+					"transition": "slide",
+					"bypassed": {
+						"target": "notFound"
+					}
+				},
+				"Activity": {
+					"viewName": "trackerView",
+					"viewLevel": 1,
+					"routerClass": "sap.m.routing.Router",
+					"viewType": "XML",
+					"viewPath": "TrackerEntry.TrackerEntry.view",
+					"controlAggregation": "pages",
+					"controlId": "myapp",
+					"transition": "slide",
+					"bypassed": {
+						"target": "notFound"
+					}
+				},
+				"nouserLogin": {
+					"viewName": "nouserLogin",
+					"viewLevel": 0,
+					"routerClass": "sap.m.routing.Router",
+					"viewType": "XML",
+					"viewPath": "TrackerEntry.TrackerEntry.view",
+					"controlAggregation": "pages",
+					"controlId": "myapp",
+					"transition": "slide",
+					"bypassed": {
+						"target": "notFound"
+					}
+				},
+				"adminLogin": {
+					"viewName": "View1",
+					"viewLevel": 0,
+					"routerClass": "sap.m.routing.Router",
+					"viewType": "XML",
+					"viewPath": "TrackerEntry.TrackerEntry.view",
+					"controlAggregation": "pages",
+					"controlId": "myapp",
+					"transition": "slide",
+					"bypassed": {
+						"target": "notFound"
+					}
+				},
+				"Statistics": {
+					"viewType": "XML",
+					"viewName": "Statistics"
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "",
+		"_version": "1.1.0"
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/ztrackerentry/",
+		"_version": "1.1.0"
+	}
+}

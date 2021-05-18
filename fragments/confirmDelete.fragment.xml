@@ -1,0 +1,25 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" >
+    <Dialog title="Confirm" id="confirm_delete" >
+        <content>
+           <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4"
+				labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3"
+				columnsL="2" columnsM="2" singleContainerFullSize="false" class="sapUiSizeCompact">
+				<f:content>
+					
+				
+					<Text text="Do you confirm deleting the user?" class="sapUiSizeCompact"/>
+					<Text id="confirm_delete_id" text="XXXXX" class="sapUiSizeCompact" visible="false"/>
+					<Text text="Note: you will not be able to undo this operation" class="sapUiSizeCompact"/>
+				
+					
+					</f:content>
+			</f:SimpleForm>	
+			
+        </content>
+        <buttons>
+        		<Button text="Yes" type="Accept" press="quickDeleteUser" />
+    			<Button text="No" type="Reject" press="onClose" />
+                
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

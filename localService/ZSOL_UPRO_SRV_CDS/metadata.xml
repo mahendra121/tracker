@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:Reference
+		Uri="https://webidecp-p1942750097trial.dispatcher.hanatrial.ondemand.com/destinations/M17/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="ZSOL_UPRO_SRV_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="ZSOL_LEAD_SRVType" sap:label="Solution Center Lead Service" sap:content-version="1">
+				<Key><PropertyRef Name="lead_id"/></Key><Property Name="lead_id" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label="LEAD_ID"
+					sap:quickinfo="TRACKER DE LEAD_ID"/><Property Name="lead_name" Type="Edm.String" MaxLength="40" sap:label="LEAD_NAME" sap:quickinfo="TRACKER DE LEAD_NAME"/><Property Name="flag" Type="Edm.String" MaxLength="2" sap:label="FLAG" sap:quickinfo="TRACKER DE FLAG"/></EntityType>
+			<EntityType Name="ZSOL_LOCA_SRVType" sap:label="Solution Center Location Service" sap:content-version="1">
+				<Key><PropertyRef Name="loca_id"/></Key><Property Name="loca_id" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label="LOCA_ID"
+					sap:quickinfo="TRACKER DE LOCA_ID"/><Property Name="loca_name" Type="Edm.String" MaxLength="40" sap:label="LOCA_NAME" sap:quickinfo="TRACKER DE LOCA_NAME"/><Property Name="flag" Type="Edm.String" MaxLength="2" sap:label="FLAG" sap:quickinfo="TRACKER DE FLAG"/></EntityType>
+			<EntityType Name="ZSOL_REST_SRVType" sap:label="Solution Center Resource Type Service" sap:content-version="1">
+				<Key><PropertyRef Name="rest_id"/></Key><Property Name="rest_id" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label="REST_ID"
+					sap:quickinfo="TRACKER DE REST_ID"/><Property Name="rest_name" Type="Edm.String" MaxLength="40" sap:label="REST_NAME" sap:quickinfo="TRACKER DE REST_NAME"/><Property Name="flag" Type="Edm.String" MaxLength="2" sap:label="FLAG" sap:quickinfo="TRACKER DE FLAG"/></EntityType>
+			<EntityType Name="ZSOL_SKILL_SRVType" sap:label="Solution Center Skill Service" sap:content-version="1">
+				<Key><PropertyRef Name="skill_id"/></Key><Property Name="skill_id" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label="SKILL_ID"
+					sap:quickinfo="TRACKER DE SKILL_ID"/><Property Name="skill_name" Type="Edm.String" MaxLength="40" sap:label="SKILL_NAME" sap:quickinfo="TRACKER DE SKILL_NAME"/><Property Name="flag" Type="Edm.String" MaxLength="2" sap:label="FLAG" sap:quickinfo="TRACKER DE FLAG"/></EntityType>
+			<EntityType Name="ZSOL_UPRO_SRVType" sap:label="Solution Center User Profile Service" sap:content-version="1">
+				<Key><PropertyRef Name="user_id"/></Key><Property Name="user_id" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label="USER_ID"
+					sap:quickinfo="TRACKER DE USER_ID"/><Property Name="rest_id" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="REST_ID"
+					sap:quickinfo="TRACKER DE REST_ID"/><Property Name="lead_id" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="LEAD_ID"
+					sap:quickinfo="TRACKER DE LEAD_ID"/><Property Name="skill_id" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="SKILL_ID"
+					sap:quickinfo="TRACKER DE SKILL_ID"/><Property Name="loca_id" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="LOCA_ID"
+					sap:quickinfo="TRACKER DE LOCA_ID"/><NavigationProperty Name="to_toLead" Relationship="ZSOL_UPRO_SRV_CDS.assoc_49EF9EC2BCD5A30365C678C78CAC7F4D"
+					FromRole="FromRole_assoc_49EF9EC2BCD5A30365C678C78CAC7F4D" ToRole="ToRole_assoc_49EF9EC2BCD5A30365C678C78CAC7F4D"/><NavigationProperty Name="to_toLoca" Relationship="ZSOL_UPRO_SRV_CDS.assoc_32CCAC456FC9C7A208FF723FE48FC61E"
+					FromRole="FromRole_assoc_32CCAC456FC9C7A208FF723FE48FC61E" ToRole="ToRole_assoc_32CCAC456FC9C7A208FF723FE48FC61E"/><NavigationProperty Name="to_toRest" Relationship="ZSOL_UPRO_SRV_CDS.assoc_B7C8D824C47B42DFECFC01A3D1E424AD"
+					FromRole="FromRole_assoc_B7C8D824C47B42DFECFC01A3D1E424AD" ToRole="ToRole_assoc_B7C8D824C47B42DFECFC01A3D1E424AD"/><NavigationProperty Name="to_toSkill" Relationship="ZSOL_UPRO_SRV_CDS.assoc_6BBCE8EA2E5151DEBBF492524D258716"
+					FromRole="FromRole_assoc_6BBCE8EA2E5151DEBBF492524D258716" ToRole="ToRole_assoc_6BBCE8EA2E5151DEBBF492524D258716"/><NavigationProperty Name="to_toUser" Relationship="ZSOL_UPRO_SRV_CDS.assoc_9952224D03FFC3D8A708DA445DD53C01"
+					FromRole="FromRole_assoc_9952224D03FFC3D8A708DA445DD53C01" ToRole="ToRole_assoc_9952224D03FFC3D8A708DA445DD53C01"/></EntityType>
+			<EntityType Name="ZSOL_USER_CDSType" sap:label="Solution Center Users CDS" sap:content-version="1">
+				<Key><PropertyRef Name="user_id"/></Key><Property Name="user_id" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label="USER_ID"
+					sap:quickinfo="TRACKER DE USER_ID"/><Property Name="user_fname" Type="Edm.String" MaxLength="40" sap:label="USER_FNAME" sap:quickinfo="TRACKER DE USER_FNAME"/><Property Name="user_uname" Type="Edm.String" MaxLength="40" sap:label="USER_UNMAE" sap:quickinfo="TRACKER DE USER_UNAME"/><Property Name="user_psw" Type="Edm.String" sap:label="USER_PSW" sap:quickinfo="TRACKER DE USER_PSW"/><Property Name="flag" Type="Edm.String" MaxLength="2" sap:label="FLAG" sap:quickinfo="TRACKER DE FLAG"/><Property Name="valfr" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="VALFR" sap:quickinfo="TRACKER DE VALFR"/><Property Name="valto" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="VALTO" sap:quickinfo="TRACKER DE FOR VALTO"/></EntityType>
+			<Association Name="assoc_32CCAC456FC9C7A208FF723FE48FC61E" sap:content-version="1"><End Type="ZSOL_UPRO_SRV_CDS.ZSOL_UPRO_SRVType" Multiplicity="1" Role="FromRole_assoc_32CCAC456FC9C7A208FF723FE48FC61E"/><End Type="ZSOL_UPRO_SRV_CDS.ZSOL_LOCA_SRVType" Multiplicity="1" Role="ToRole_assoc_32CCAC456FC9C7A208FF723FE48FC61E"/></Association>
+			<Association Name="assoc_B7C8D824C47B42DFECFC01A3D1E424AD" sap:content-version="1"><End Type="ZSOL_UPRO_SRV_CDS.ZSOL_UPRO_SRVType" Multiplicity="1" Role="FromRole_assoc_B7C8D824C47B42DFECFC01A3D1E424AD"/><End Type="ZSOL_UPRO_SRV_CDS.ZSOL_REST_SRVType" Multiplicity="1" Role="ToRole_assoc_B7C8D824C47B42DFECFC01A3D1E424AD"/></Association>
+			<Association Name="assoc_6BBCE8EA2E5151DEBBF492524D258716" sap:content-version="1"><End Type="ZSOL_UPRO_SRV_CDS.ZSOL_UPRO_SRVType" Multiplicity="1" Role="FromRole_assoc_6BBCE8EA2E5151DEBBF492524D258716"/><End Type="ZSOL_UPRO_SRV_CDS.ZSOL_SKILL_SRVType" Multiplicity="1" Role="ToRole_assoc_6BBCE8EA2E5151DEBBF492524D258716"/></Association>
+			<Association Name="assoc_9952224D03FFC3D8A708DA445DD53C01" sap:content-version="1"><End Type="ZSOL_UPRO_SRV_CDS.ZSOL_UPRO_SRVType" Multiplicity="1" Role="FromRole_assoc_9952224D03FFC3D8A708DA445DD53C01"/><End Type="ZSOL_UPRO_SRV_CDS.ZSOL_USER_CDSType" Multiplicity="1" Role="ToRole_assoc_9952224D03FFC3D8A708DA445DD53C01"/></Association>
+			<Association Name="assoc_49EF9EC2BCD5A30365C678C78CAC7F4D" sap:content-version="1"><End Type="ZSOL_UPRO_SRV_CDS.ZSOL_UPRO_SRVType" Multiplicity="1" Role="FromRole_assoc_49EF9EC2BCD5A30365C678C78CAC7F4D"/><End Type="ZSOL_UPRO_SRV_CDS.ZSOL_LEAD_SRVType" Multiplicity="1" Role="ToRole_assoc_49EF9EC2BCD5A30365C678C78CAC7F4D"/></Association>
+			<EntityContainer Name="ZSOL_UPRO_SRV_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="ZSOL_LEAD_SRV" EntityType="ZSOL_UPRO_SRV_CDS.ZSOL_LEAD_SRVType" sap:content-version="1"/><EntitySet Name="ZSOL_LOCA_SRV" EntityType="ZSOL_UPRO_SRV_CDS.ZSOL_LOCA_SRVType" sap:content-version="1"/><EntitySet Name="ZSOL_REST_SRV" EntityType="ZSOL_UPRO_SRV_CDS.ZSOL_REST_SRVType" sap:content-version="1"/><EntitySet Name="ZSOL_SKILL_SRV" EntityType="ZSOL_UPRO_SRV_CDS.ZSOL_SKILL_SRVType" sap:content-version="1"/><EntitySet Name="ZSOL_UPRO_SRV" EntityType="ZSOL_UPRO_SRV_CDS.ZSOL_UPRO_SRVType" sap:content-version="1"/><EntitySet Name="ZSOL_USER_CDS" EntityType="ZSOL_UPRO_SRV_CDS.ZSOL_USER_CDSType" sap:content-version="1"/>
+				<AssociationSet Name="assoc_49EF9EC2BCD5A30365C678C78CAC7F4D" Association="ZSOL_UPRO_SRV_CDS.assoc_49EF9EC2BCD5A30365C678C78CAC7F4D"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZSOL_UPRO_SRV" Role="FromRole_assoc_49EF9EC2BCD5A30365C678C78CAC7F4D"/><End EntitySet="ZSOL_LEAD_SRV" Role="ToRole_assoc_49EF9EC2BCD5A30365C678C78CAC7F4D"/></AssociationSet>
+				<AssociationSet Name="assoc_32CCAC456FC9C7A208FF723FE48FC61E" Association="ZSOL_UPRO_SRV_CDS.assoc_32CCAC456FC9C7A208FF723FE48FC61E"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZSOL_UPRO_SRV" Role="FromRole_assoc_32CCAC456FC9C7A208FF723FE48FC61E"/><End EntitySet="ZSOL_LOCA_SRV" Role="ToRole_assoc_32CCAC456FC9C7A208FF723FE48FC61E"/></AssociationSet>
+				<AssociationSet Name="assoc_6BBCE8EA2E5151DEBBF492524D258716" Association="ZSOL_UPRO_SRV_CDS.assoc_6BBCE8EA2E5151DEBBF492524D258716"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZSOL_UPRO_SRV" Role="FromRole_assoc_6BBCE8EA2E5151DEBBF492524D258716"/><End EntitySet="ZSOL_SKILL_SRV" Role="ToRole_assoc_6BBCE8EA2E5151DEBBF492524D258716"/></AssociationSet>
+				<AssociationSet Name="assoc_9952224D03FFC3D8A708DA445DD53C01" Association="ZSOL_UPRO_SRV_CDS.assoc_9952224D03FFC3D8A708DA445DD53C01"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZSOL_UPRO_SRV" Role="FromRole_assoc_9952224D03FFC3D8A708DA445DD53C01"/><End EntitySet="ZSOL_USER_CDS" Role="ToRole_assoc_9952224D03FFC3D8A708DA445DD53C01"/></AssociationSet>
+				<AssociationSet Name="assoc_B7C8D824C47B42DFECFC01A3D1E424AD" Association="ZSOL_UPRO_SRV_CDS.assoc_B7C8D824C47B42DFECFC01A3D1E424AD"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZSOL_UPRO_SRV" Role="FromRole_assoc_B7C8D824C47B42DFECFC01A3D1E424AD"/><End EntitySet="ZSOL_REST_SRV" Role="ToRole_assoc_B7C8D824C47B42DFECFC01A3D1E424AD"/></AssociationSet>
+			</EntityContainer><atom:link rel="self"
+				href="https://webidecp-p1942750097trial.dispatcher.hanatrial.ondemand.com/destinations/M17/sap/opu/odata/sap/ZSOL_UPRO_SRV_CDS/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version"
+				href="https://webidecp-p1942750097trial.dispatcher.hanatrial.ondemand.com/destinations/M17/sap/opu/odata/sap/ZSOL_UPRO_SRV_CDS/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

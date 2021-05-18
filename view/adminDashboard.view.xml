@@ -1,0 +1,168 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:chart="sap.suite.ui.microchart" controllerName="TrackerEntry.TrackerEntry.controller.adminDashboard" displayBlock="true">
+	
+		
+			<!--<Page showSubHeader="false" showFooter="false">-->
+			<!--	<content>-->
+					<Bar id="bar0">
+						<contentLeft>
+							<DatePicker width="100%" id="picker0" change="onDateChange" />
+						</contentLeft>
+						<contentRight>
+							<Select xmlns:sap.ui.core="sap.ui.core" selectedKey="item1" id="dashBarSelect" width="300px" change="handleHBox">
+								<items>
+									<sap.ui.core:ListItem text="Select lists..." key="blank" id="blankSelect"/>
+									<sap.ui.core:ListItem text="Defaulter's List" key="SelectDefaulter" id="dashBarSelectDefaulter"/>
+									<sap.ui.core:ListItem text="Billable Resources" key="SelectBillable" id="dashBarSelectBillable"/>
+									<sap.ui.core:ListItem text="Non-Billable Resources" key="SelectNonBillable" id="dashBarSelectNonBillable"/></items>
+							</Select>
+							<Button width="auto" id="refreshDashboardBtn" icon="sap-icon://refresh" type="Emphasized" press="onDateChange" text="Refresh Stats" />
+						</contentRight>
+					</Bar>
+					<VBox xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:chart="sap.suite.ui.microchart" width="100%" direction="Column" id="chartHeaderContainer">
+						<items>
+							<HBox xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:chart="sap.suite.ui.microchart" xmlns="sap.m" width="100%" id="chartHeader">
+								<items>
+									<VBox width="100%" direction="Column"  justifyContent="Inherit" renderType="Bare" id="dayVbox1">
+										<chart:RadialMicroChart xmlns:chart="sap.suite.ui.microchart" size="M" id="chartMon" total="100" fraction="0" press="press" class="sapUiSmallMargin"/>
+										<Label text="Monday" width="100%" id="monLbl"/>
+										
+									</VBox>
+									<VBox width="100%" direction="Column"  justifyContent="Inherit" renderType="Bare" id="dayVbox2">
+										<chart:RadialMicroChart xmlns:chart="sap.suite.ui.microchart" size="M" id="chartTue" total="100" fraction="0" press="press" class="sapUiSmallMargin"/>
+										<Label xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:chart="sap.suite.ui.microchart" text="Tuesday" width="100%" id="tueLbl"/>
+										
+									</VBox>
+									<VBox width="100%" direction="Column" justifyContent="Inherit" renderType="Bare" id="dayVbox3">
+										<chart:RadialMicroChart xmlns:chart="sap.suite.ui.microchart" size="M" id="chartWed" total="100" fraction="0" press="press" class="sapUiSmallMargin"/>
+										<Label xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:chart="sap.suite.ui.microchart" text="Wednesday" width="100%" id="wedLbl"/>
+										
+									</VBox>
+									<VBox width="100%" direction="Column" justifyContent="Inherit" renderType="Bare" id="dayVbox4">
+										<chart:RadialMicroChart xmlns:chart="sap.suite.ui.microchart" size="M" id="chartThu" total="100" fraction="0" press="press" class="sapUiSmallMargin"/>
+										<Label xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:chart="sap.suite.ui.microchart" text="Thursday" width="100%" id="thuLbl"/>
+									
+									</VBox>
+									<VBox width="100%" direction="Column"  justifyContent="Inherit" renderType="Bare" id="dayVbox5">
+										<chart:RadialMicroChart xmlns:chart="sap.suite.ui.microchart" size="M" id="chartFri" total="100" fraction="0" press="press" class="sapUiSmallMargin"/>
+										<Label xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:chart="sap.suite.ui.microchart" text="Friday" width="100%" id="friLbl"/>
+									
+									</VBox>
+									<VBox width="100%" direction="Column" id="vbox5" height="100px">
+										<items>
+										<chart:HarveyBallMicroChart xmlns:chart="sap.suite.ui.microchart" id="chartRes1"  totalLabel="" isResponsive="true" formattedLabel="true" showTotal="false" showFractions="true" press="press" class="sapUiSmallMargin">
+											
+										</chart:HarveyBallMicroChart>
+										<Label id="chart1Lbl" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:chart="sap.suite.ui.microchart" text="Billable" width="100%" />
+									</items>
+									</VBox>
+									<VBox width="100%" direction="Column" id="vbox6"  height="100px">
+										<items>
+										<chart:HarveyBallMicroChart xmlns:chart="sap.suite.ui.microchart" id="chartRes2"  totalLabel="" isResponsive="true" formattedLabel="true" showTotal="false" showFractions="true" press="press" class="sapUiSmallMargin">
+											
+										</chart:HarveyBallMicroChart>
+										<Label id="chart2Lbl" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:chart="sap.suite.ui.microchart" text="Non-Billable" width="100%" />
+									</items>
+									</VBox>
+								</items>
+							</HBox>
+						</items>
+					</VBox>
+					<HBox xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:chart="sap.suite.ui.microchart" xmlns="sap.m" width="100%" id="defaulterHBox">
+						<items>
+							
+							<Table noDataText="Drop column list items here and columns in the area above" id="table1" headerText="Defaulter List">
+								<columns>
+									<Column>
+										<header>
+											<Label text="Emp ID" />
+										</header>
+									</Column>
+									<Column>
+										<header>
+											<Label text="Full Name" />
+										</header>
+									</Column>
+									<Column>
+										<header>
+											<Label text="Username" />
+										</header>
+									</Column>
+									<Column>
+										<header>
+											<Label text="Email" />
+										</header>
+									</Column>
+									
+								</columns>
+								<headerToolbar>
+									<Toolbar width="100%" id="toolbar2">
+										<content>
+											<Label text="Defaulter List for ..." width="100%" id="table1_HLabel"/>
+											<Button width="auto" id="button1" icon="sap-icon://excel-attachment" press="exportToExcel" />
+											<Button width="auto" id="mailButton" icon="sap-icon://email" press="mailTrigger" />
+										</content>
+									</Toolbar>
+								</headerToolbar>
+							</Table>
+						</items>
+					</HBox>
+					<HBox xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:chart="sap.suite.ui.microchart" width="100%" id="billableHBox">
+						<items>
+							<Table noDataText="Drop column list items here and columns in the area above" id="table2" headerText="Shadow Resources" growing="true" growingScrollToLoad="true" growingThreshold="10">
+								<columns>
+									<Column id="column0_copy">
+										<header>
+											<Label text="Emp ID" id="label0_1533742814861_copy"/>
+										</header>
+									</Column>
+									<Column id="column1_copy">
+										<header>
+											<Label text="Name" id="label1_copy"/>
+										</header>
+									</Column>
+								</columns>
+								<headerToolbar>
+									<Toolbar width="100%" id="toolbar3">
+										<content>
+											<Label text="Billable Resources" width="100%" id="table2_HLabel"/>
+											<Button xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:chart="sap.suite.ui.microchart" xmlns="sap.m" width="auto" id="button1_copy" icon="sap-icon://excel-attachment" press="exportToExcel2" />
+										</content>
+									</Toolbar>
+								</headerToolbar>
+							</Table>
+						</items>
+					</HBox>
+					<HBox xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:chart="sap.suite.ui.microchart" width="100%" id="nonBillableHBox">
+						<items>
+							<Table noDataText="Drop column list items here and columns in the area above" id="table3" headerText="Shadow Resources" growing="true" growingScrollToLoad="true" growingThreshold="10">
+								<columns>
+									<Column id="column0_copy2">
+										<header>
+											<Label text="Emp ID" id="label0_1533742814861_copy2"/>
+										</header>
+									</Column>
+									<Column id="column1_copy2">
+										<header>
+											<Label text="Name" id="label1_copy2"/>
+										</header>
+									</Column>
+								</columns>
+								<headerToolbar>
+									<Toolbar width="100%" id="toolbar3_copy">
+										<content>
+											<Label text="Non-Billable Resources" width="100%" id="table3_HLabel"/>
+											<Button xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:chart="sap.suite.ui.microchart" xmlns="sap.m" width="auto" id="button1_copy2" icon="sap-icon://excel-attachment" press="exportToExcel3" />
+										</content>
+									</Toolbar>
+								</headerToolbar>
+							</Table>
+						</items>
+					</HBox>
+			<!--	</content>-->
+			<!--	<customHeader>-->
+					
+			<!--	</customHeader>-->
+			<!--</Page>-->
+	
+
+</mvc:View>

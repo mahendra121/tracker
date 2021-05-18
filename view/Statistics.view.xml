@@ -1,0 +1,177 @@
+<mvc:View controllerName="TrackerEntry.TrackerEntry.controller.Statistics" xmlns:mvc="sap.ui.core.mvc" xmlns:viz.data="sap.viz.ui5.data"
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:viz="sap.viz.ui5.controls" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core" xmlns:chart="sap.suite.ui.commons" displayBlock="true" xmlns="sap.m">
+	<Bar id="bar0">
+		<contentLeft>
+			<DateRangeSelection width="100%" id="picker0" change="onDateChange"/>
+		</contentLeft>
+		<contentRight>
+			<Button id="buttonBack" press="onNavBack" text="Back"></Button>
+		</contentRight>
+		<contentRight>
+			<Button id="refreshStat" press="onPageRefresh" icon="sap-icon://refresh" ></Button>
+		</contentRight>
+	</Bar>
+	<!--Chart Connector for Project-->
+	<chart:ChartContainer id="chartContainerProj" showFullScreen="true" showZoom="true" title="Hours Per Project">
+		<chart:content>
+			<chart:ChartContainerContent icon="sap-icon://bar-chart" title="Project Chart">
+				<chart:content>
+					<viz:Popover id="idPopOverProj"/>
+					<viz:VizFrame id="idProjChart" width="auto" uiConfig="{applicationSet:'fiori'}" vizType="column"
+						vizProperties="{ plotArea:{ dataLabel:{visible: true, type:'value'}, drawingEffect: 'glossy' }, title : {text:'ProjectName-Hours', visible: false}, legendGroup:{layout:{position: 'right'}}}"
+						selectData="onClickProject" renderComplete="handleRenderComplete">
+						<viz:dataset>
+							<viz.data:FlattenedDataset id="flattenDataProj" data="{oModel>/}">
+								<viz.data:dimensions>
+									<viz.data:DimensionDefinition name="ProjectName" value="{oModel>proj_name}"/>
+								</viz.data:dimensions>
+								<viz.data:measures>
+									<viz.data:MeasureDefinition name="Hours" value="{oModel>Hrs}"/>
+								</viz.data:measures>
+							</viz.data:FlattenedDataset>
+						</viz:dataset>
+						<viz:feeds>
+							<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Hours"/>
+							<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="ProjectName"/>
+						</viz:feeds>
+					</viz:VizFrame>
+				</chart:content>
+			</chart:ChartContainerContent>
+			<chart:ChartContainerContent icon="sap-icon://table-view" title="Project Table">
+				<chart:content>
+					<Table id="idProjectTable" items="{oModel>/}">
+						<columns>
+							<Column width="12em">
+								<Text text="Project"/>
+							</Column>
+							<Column width="12em">
+								<Text text="Total Hours"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<Text text="{oModel>proj_name}"/>
+									<Text
+										text=" { path : 'oModel>Hrs', type:'sap.ui.model.odata.type.Decimal', formatOptions: { minIntegerDigits: 1, minFractionDigits: 2, maxFractionDigits: 2, decimals: 2, decimalSeparator: '.', groupingEnabled: false }}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</chart:content>
+			</chart:ChartContainerContent>
+		</chart:content>
+		<chart:customIcons>
+			<core:Icon id="projectIcon" src="sap-icon://excel-attachment" tooltip="Project Export" press="onProjectExport"></core:Icon>
+		</chart:customIcons>
+	</chart:ChartContainer>
+	<!--Chart Connector for Activity-->
+	<chart:ChartContainer id="chartContainerActivity" showFullScreen="true" showZoom="true" title="Hours Per Activity">
+		<chart:content>
+			<chart:ChartContainerContent icon="sap-icon://bar-chart" title="Activity Chart">
+				<chart:content>
+					<viz:Popover id="idPopOverActivity"/>
+					<viz:VizFrame id="idActivityChart" width="auto" uiConfig="{applicationSet:'fiori'}" vizType="column"
+						vizProperties="{ plotArea:{ dataLabel:{visible: true, type:'value'}, drawingEffect: 'glossy' }, title : {text:'ActivityName-Hours', visible: false}, legendGroup:{layout:{position: 'right'}}}"
+						selectData="onClickActivity" renderComplete="handleRenderComplete">
+						<viz:dataset>
+							<viz.data:FlattenedDataset id="flattenDataActivity" data="{oModel>/}">
+								<viz.data:dimensions>
+									<viz.data:DimensionDefinition name="ActivityName" value="{oModel>acti_name}"/>
+								</viz.data:dimensions>
+								<viz.data:measures>
+									<viz.data:MeasureDefinition name="Hours" value="{oModel>hrs}"/>
+								</viz.data:measures>
+							</viz.data:FlattenedDataset>
+						</viz:dataset>
+						<viz:feeds>
+							<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Hours"/>
+							<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="ActivityName"/>
+						</viz:feeds>
+					</viz:VizFrame>
+				</chart:content>
+			</chart:ChartContainerContent>
+			<chart:ChartContainerContent icon="sap-icon://table-view" title="Activity Table">
+				<chart:content>
+					<Table id="idActivityTable" items="{oModel>/}">
+						<columns>
+							<Column width="12em">
+								<Text text="Activity"/>
+							</Column>
+							<Column width="12em">
+								<Text text="Total Hours"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<Text text="{oModel>acti_name}"/>
+									<Text
+										text=" { path : 'oModel>hrs', type:'sap.ui.model.odata.type.Decimal', formatOptions: { minIntegerDigits: 1, minFractionDigits: 2, maxFractionDigits: 2, decimals: 2, decimalSeparator: '.', groupingEnabled: false }}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</chart:content>
+			</chart:ChartContainerContent>
+		</chart:content>
+		<chart:customIcons>
+			<core:Icon id="activityIcon" src="sap-icon://excel-attachment" tooltip="Activity Export" press="onActivityExport"></core:Icon>
+		</chart:customIcons>
+	</chart:ChartContainer>
+	<!--Chart Connector for User-->
+	<chart:ChartContainer id="chartContainerUser" showFullScreen="true" showZoom="true" title="Hours Per User">
+		<chart:content>
+			<chart:ChartContainerContent icon="sap-icon://bar-chart" title="User Chart">
+				<chart:content>
+					<viz:Popover id="idPopOverUser"/>
+					<viz:VizFrame id="idUserChart" width="auto" uiConfig="{applicationSet:'fiori'}" vizType="column"
+						vizProperties="{ plotArea:{ dataLabel:{visible: true, type:'value'}, drawingEffect: 'glossy' }, title : {text:'UserName-Hours', visible: false}, legendGroup:{layout:{position: 'right'}}}"
+						selectData="onClickUser" renderComplete="handleRenderComplete">
+						<viz:dataset>
+							<viz.data:FlattenedDataset id="flattenDataUser" data="{oModel>/}">
+								<viz.data:dimensions>
+									<viz.data:DimensionDefinition name="UserName" value="{oModel>fname}"/>
+								</viz.data:dimensions>
+								<viz.data:measures>
+									<viz.data:MeasureDefinition name="Hours" value="{oModel>hrs}"/>
+								</viz.data:measures>
+							</viz.data:FlattenedDataset>
+						</viz:dataset>
+						<viz:feeds>
+							<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Hours"/>
+							<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="UserName"/>
+						</viz:feeds>
+					</viz:VizFrame>
+				</chart:content>
+			</chart:ChartContainerContent>
+			<chart:ChartContainerContent icon="sap-icon://table-view" title="User Table">
+				<chart:content>
+					<Table id="idUserTable" items="{oModel>/}">
+						<columns>
+							<Column width="12em">
+								<Text text="User Name"/>
+							</Column>
+							<Column width="12em">
+								<Text text="Total Hours"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<Text text="{oModel>fname}"/>
+									<Text
+										text=" { path : 'oModel>hrs', type:'sap.ui.model.odata.type.Decimal', formatOptions: { minIntegerDigits: 1, minFractionDigits: 2, maxFractionDigits: 2, decimals: 2, decimalSeparator: '.', groupingEnabled: false }}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</chart:content>
+			</chart:ChartContainerContent>
+		</chart:content>
+		<chart:customIcons>
+			<core:Icon id="userIcon" src="sap-icon://excel-attachment" tooltip="User Export" press="onUserExport"></core:Icon>
+		</chart:customIcons>
+	</chart:ChartContainer>
+</mvc:View>

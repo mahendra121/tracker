@@ -1,0 +1,44 @@
+{
+  "welcomeFile": "/index.html",
+  "routes": [
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources",
+        "version": "1.52.9"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources",
+        "version": "1.52.9"
+      },
+      "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/sap/opu/odata",
+      "target": {
+        "type": "destination",
+        "name": "M17_MFGPath_400_Blockchain",
+        "entryPath": "/sap/opu/odata"
+      },
+      "description": "M17 400"
+    },
+    {
+      "path": "/sap/bc/ui5_ui5",
+      "target": {
+        "type": "destination",
+        "name": "M17_MFGPath_400_Blockchain",
+        "entryPath": "/sap/bc/ui5_ui5"
+      },
+      "description": "M17 400"
+    }
+  ],
+  "sendWelcomeFileRedirect": true
+}

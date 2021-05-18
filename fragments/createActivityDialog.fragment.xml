@@ -1,0 +1,23 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" >
+    <Dialog title="Activity" id="acti_dialog">
+        <content>
+            <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4"
+				labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3"
+				columnsL="2" columnsM="2" singleContainerFullSize="false" class="sapUiSizeCompact">
+				<f:content>
+					<core:Title text="Add Activity"/>
+					<Label text="Activity Title"/>
+					<Input id="ipcr_actiName" value="" placeholder="e.g. Solution Design"/>
+					<!--<Label text="Short Description"/>-->
+					<!--<Input value="" placeholder="Description"></Input>-->
+					
+				</f:content>
+			</f:SimpleForm>
+        </content>
+        <buttons>
+        		<Button text="Save" press="onSaveActiCreate" />
+        		<Button text="Clear" press="onClearActiCreate" />
+                <Button text="Close" press="onCloseActiS" />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

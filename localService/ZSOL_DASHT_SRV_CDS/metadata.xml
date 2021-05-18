@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:Reference
+		Uri="https://webidecp-p1942966390trial.dispatcher.hanatrial.ondemand.com/destinations/M17/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="ZSOL_DASHT_SRV_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="ZSOL_DASHT_SRVType" sap:label="Solution Center Dashboard Total KPI" sap:content-version="1">
+				<Key><PropertyRef Name="param_rest"/><PropertyRef Name="rest_id"/></Key><Property Name="param_rest" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label="Rest ID"/><Property Name="rest_id" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label="Rest ID"
+					sap:quickinfo="TRACKER DE REST_ID"/><Property Name="countRest" Type="Edm.Int32"/><NavigationProperty Name="Parameters" Relationship="ZSOL_DASHT_SRV_CDS.assoc_B5AE6D776EDE824801431B290D70A403"
+					FromRole="ToRole_assoc_B5AE6D776EDE824801431B290D70A403" ToRole="FromRole_assoc_B5AE6D776EDE824801431B290D70A403" sap:filterable="false"/></EntityType>
+			<EntityType Name="ZSOL_DASHT_SRVParameters" sap:semantics="parameters" sap:content-version="1">
+				<Key><PropertyRef Name="param_rest"/></Key><Property Name="param_rest" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:parameter="mandatory"
+					sap:label="Rest ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="Set" Relationship="ZSOL_DASHT_SRV_CDS.assoc_B5AE6D776EDE824801431B290D70A403"
+					FromRole="FromRole_assoc_B5AE6D776EDE824801431B290D70A403" ToRole="ToRole_assoc_B5AE6D776EDE824801431B290D70A403"/></EntityType>
+			<Association Name="assoc_B5AE6D776EDE824801431B290D70A403" sap:content-version="1"><End Type="ZSOL_DASHT_SRV_CDS.ZSOL_DASHT_SRVParameters" Multiplicity="1" Role="FromRole_assoc_B5AE6D776EDE824801431B290D70A403"/><End Type="ZSOL_DASHT_SRV_CDS.ZSOL_DASHT_SRVType" Multiplicity="*" Role="ToRole_assoc_B5AE6D776EDE824801431B290D70A403"/></Association>
+			<EntityContainer Name="ZSOL_DASHT_SRV_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="ZSOL_DASHT_SRVSet" EntityType="ZSOL_DASHT_SRV_CDS.ZSOL_DASHT_SRVType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="ZSOL_DASHT_SRV" EntityType="ZSOL_DASHT_SRV_CDS.ZSOL_DASHT_SRVParameters" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<AssociationSet Name="assoc_B5AE6D776EDE824801431B290D70A403" Association="ZSOL_DASHT_SRV_CDS.assoc_B5AE6D776EDE824801431B290D70A403"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZSOL_DASHT_SRV" Role="FromRole_assoc_B5AE6D776EDE824801431B290D70A403"/><End EntitySet="ZSOL_DASHT_SRVSet" Role="ToRole_assoc_B5AE6D776EDE824801431B290D70A403"/></AssociationSet>
+			</EntityContainer><atom:link rel="self"
+				href="https://webidecp-p1942966390trial.dispatcher.hanatrial.ondemand.com/destinations/M17/sap/opu/odata/sap/ZSOL_DASHT_SRV_CDS/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version"
+				href="https://webidecp-p1942966390trial.dispatcher.hanatrial.ondemand.com/destinations/M17/sap/opu/odata/sap/ZSOL_DASHT_SRV_CDS/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,115 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="TrackerEntry.TrackerEntry.controller.adminEntry">
+	<!--<App>-->
+	<!--	<pages>-->
+	<!--		<Page showFooter="true" showHeader="false">-->
+	<!--			<content>-->
+					<Panel id="panel0" expanded="true">
+						<content>
+							<sap.ui.layout:Grid xmlns:sap.ui.layout="sap.ui.layout" id="grid_head" defaultSpan="XL3 L3 M3 S3">
+								<sap.ui.layout:content>
+									<ObjectListItem title="Emp name" intro="Employee Name" icon="sap-icon://person-placeholder" id="item0"/>
+									<ObjectListItem xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" title="Lead name" intro="Lead" icon="sap-icon://leads" id="item2"/>
+									<ObjectListItem xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" intro="Resource Type" icon="sap-icon://monitor-payments" id="item3" title="Resource Type"/>
+									<ObjectListItem xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" title="Skill name" intro="Skill" icon="sap-icon://customer-and-contacts" id="item4"/></sap.ui.layout:content>
+							</sap.ui.layout:Grid>
+						</content>
+						<headerToolbar>
+							<Toolbar width="100%" id="toolbar1">
+								<content>
+									<Bar id="mbar0">
+										<contentLeft>
+											<ComboBox xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" id="userSel" placeholder="Type/Pick EmpID" change="runFirst" showSecondaryValues="true">
+											    </ComboBox>
+											<DatePicker xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" width="auto" id="picker1" valueFormat="dd/MM/yyyy" displayFormat="dd/MM/yyyy" change="onDateChange"/>
+										</contentLeft>
+										<contentMiddle>
+											<Button xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" text="View Tracker" width="auto" id="viewButton" press="onViewPress"/>
+											<Button xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" text="Fill Tracker" width="auto" id="fillButton" press="onFillPress"/>
+										</contentMiddle>
+									</Bar>
+								</content>
+							</Toolbar>
+						</headerToolbar>
+					</Panel>
+					<Table xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:sap.ui.layout="sap.ui.layout" xmlns="sap.m" noDataText="No Entry for Today" id="table0">
+						<columns>
+	<!--						<Column xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" id="column0_copy3">
+								<header>
+									<Label text="Entry" id="label0_copy3"/>
+								</header>
+							</Column>-->
+							<Column id="column0">
+								<header>
+									<Label text="Project" id="label0"/>
+								</header>
+							</Column>
+							<Column id="column1">
+								<header>
+									<Label text="Activity" id="label1"/>
+								</header>
+							</Column>
+							<Column id="column2">
+								<header>
+									<Label text="Hours" id="label2"/>
+								</header>
+							</Column>
+							<Column xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" id="column0_copy">
+								<header>
+									<Label text="Comments" id="label0_copy"/>
+								</header>
+							</Column>
+						</columns>
+					</Table>
+					<Table xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:sap.ui.layout="sap.ui.layout" xmlns="sap.m" noDataText="No Entry for Today" id="htab" visible="false">
+						<columns>
+<!--							<Column xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" id="column0_copy4">
+								<header>
+									<Label text="Entry" id="label0_copy4"/>
+								</header>
+							</Column>-->
+							<Column id="column0_copy2">
+								<header>
+									<Label text="Project" id="label0_copy2"/>
+								</header>
+							</Column>
+							<Column id="column1_copy">
+								<header>
+									<Label text="Activity" id="label1_copy"/>
+								</header>
+							</Column>
+							<Column id="column2_copy">
+								<header>
+									<Label text="Hours" id="label2_copy"/>
+								</header>
+							</Column>
+							<Column xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" id="column0_copy5">
+								<header>
+									<Label text="Comments" id="label0_copy5"/>
+								</header>
+							</Column>
+						</columns>
+					</Table>
+					<sap.ui.layout:Grid xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.layout="sap.ui.layout" id="grid0" defaultSpan="XL12 L12 M12 S12"/>
+				<!--</content>-->
+			
+					<Bar id="bar0">
+						<contentRight>
+							<Button width="auto" id="save" activeIcon="sap-icon://save" icon="sap-icon://save" type="Accept" class="roundButton" press="onSaveHelper" enabled="false" text="Save"/></contentRight>
+						<contentLeft>
+							<Button width="auto" id="buttonPop" icon="sap-icon://message-popup" type="Emphasized" press="showMessagePopover"/>
+						</contentLeft>
+					</Bar>
+			
+				<!--<footer>-->
+				<!--	<Bar id="bar0">-->
+				<!--		<contentRight>-->
+				<!--			<Button width="auto" id="save" activeIcon="sap-icon://save" icon="sap-icon://save" type="Accept" class="roundButton" press="onSavePress" enabled="false" text="Save"/></contentRight>-->
+				<!--		<contentLeft>-->
+				<!--			<Button width="auto" id="buttonPop" icon="sap-icon://message-popup" type="Emphasized" press="showMessagePopover"/>-->
+				<!--		</contentLeft>-->
+				<!--	</Bar>-->
+				<!--</footer>-->
+	<!--		</Page>-->
+	<!--	</pages>-->
+	<!--</App>-->
+</mvc:View>

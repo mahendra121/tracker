@@ -1,0 +1,233 @@
+.roundButton .sapMBtnInner {
+    border-radius: 1.5rem;
+}
+
+.roundButton2 .sapMBtnInner {
+    border-radius: 1.5rem;
+}
+
+.invalidHbox {
+    margin: 1px 0px 1px 0px;
+    padding: 5px 5px 5px 5px;
+    border-right: 6px solid red;
+    background-color: #EFF4F9;
+    
+}
+
+.validHbox {
+    margin: 1px 0px 1px 0px;
+    padding: 5px 5px 5px 5px;
+    border-right: 6px solid green;
+    background-color: #F7F7F7;
+    
+}
+
+.invalidIt .sapMInputBaseInner {
+    border: 2px solid #CD5C5C;
+}
+
+.invalidIt2 {
+    border: 2px solid #CD5C5C;
+}
+
+.headItem {
+    overflow: hidden;
+    border-width: 0;
+    outline: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    background-color: #eff4f9;
+    color: #ecf0f1;
+    transition: background-color .3s;
+    
+}
+
+.headItem:hover ,
+.headItem:focus {
+    background: #8e9eab;
+    
+}
+
+.headItem:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 0;
+    padding-top: 0;
+    background-color: rgba(238, 238, 238, .3);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.headItem:active:before {
+    width: 120%;
+    padding-top: 120%;
+    transition: width .2s ease-out, padding-top .2s ease-out;
+}
+
+.headItem:hover .sapMObjLIntro,
+.headItem:focus .sapMObjLIntro{
+    color: #ffffff;
+    font-size: 18px;
+    float: left;
+}
+
+.headItem .sapMObjLIntro,
+.headItem .sapMObjLIntro{
+    color: #427cac;
+    font-size: 18px;
+    float: left;
+}
+
+.headItem:hover .sapMObjLTitle,
+.headItem:focus .sapMObjLTitle{
+    color: #ffffff;
+    font-size: 20px;
+    
+}
+
+.headItem:hover .sapUiIcon,
+.headItem:focus .sapUiIcon{
+    color: #EEE8AA;
+}
+
+.sapMTB-Transparent-CTX.sapMTB {
+    padding-left: 0;
+}
+
+/*.sapMPageFooter {*/
+/*    padding-bottom: 3em;*/
+/*}*/
+
+.sapMObjLIntro {
+    color: #262626;
+    font-size: 18px;
+}
+
+.enableButton {
+	border-bottom: 4px solid #427cac;
+}
+
+.disableButton {
+	border-bottom: none;
+}
+
+.panelGrad .sapMPanelContent {
+	padding: 10px 0px 0px 0px;
+	background: #CC95C0;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #7AA1D2, #DBD4B4, #CC95C0);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #7AA1D2, #DBD4B4, #CC95C0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.sticky {
+	position: sticky;
+	top: 0px;
+	z-index: 10;
+}
+
+
+/* Grey Top Bar */
+#__page1-intHeader {
+	background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
+}
+#__page2-intHeader {
+	background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
+}
+#__page3-intHeader {
+	background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
+}
+#__page4-intHeader {
+	background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
+}
+
+/*#__xmlview1--toolbar1 {*/
+/*    background-color: #eff4f9;*/
+/*}*/
+/*#__xmlview1--grid0 {*/
+/*	padding: 15px 1px 8px 1px;*/
+/*}*/
+
+
+/* footer bars */
+#__xmlview3--bar0 {
+	position: inherit;
+    background: transparent;
+	background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+
+}
+#__xmlview1--bar0 {
+    position: inherit;
+    background: transparent;
+    background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
+}
+#__xmlview2--bar0 {
+    position: inherit;
+    background: transparent;
+    background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
+}
+/* Icon Tab Bar */
+#__xmlview2--Icontab1--header{
+	background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
+}
+/* Admin Tables */
+/*#__xmlview2--Projecttable{*/
+/*	padding-bottom: 5em;*/
+/*}*/
+/*#__xmlview2--Activitytable{*/
+/*	padding-bottom: 5em;*/
+/*}*/
+/*#__xmlview2--skillstable{*/
+/*	padding-bottom: 5em;*/
+/*}*/
+/*#__xmlview2--Usertable{*/
+/*	padding-bottom: 5em;*/
+/*}*/
+/*#__xmlview3--table1{*/
+/*	padding-bottom: 5em;*/
+/*}*/
+/*#__xmlview3--table2{*/
+/*	padding-bottom: 5em;*/
+/*}*/
+/*#__xmlview3--table3{*/
+/*	padding-bottom: 5em;*/
+/*}*/
+
+/* Chart Stuff */
+.sapSuiteRMCSizeM{
+	height:6em !important;
+	width:6em !important;
+	align-self: center;
+}
+.highlightToday{
+	width: 100%;
+    background: lightblue;  /* fallback for old browsers */
+
+    border-radius: 0.5em;
+}
+.chartCSS{
+	text-align: center !important;
+	font-weight: bold;
+	font-size: 17px;
+}
+#__xmlview3--chartHeaderContainer{
+
+	padding-top:15px;
+}
+#__xmlview3--chartRes1{
+	padding-left: 7em;
+}
+#__xmlview3--chartRes2{
+	padding-left: 7em;
+}
+
+#__xmlview3--chart1Lbl{
+	text-align: center !important;
+}
+#__xmlview3--chart2Lbl{
+	text-align: center !important;
+}

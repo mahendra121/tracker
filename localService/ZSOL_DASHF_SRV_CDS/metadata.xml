@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:Reference
+		Uri="https://webidecp-p1942750097trial.dispatcher.hanatrial.ondemand.com/destinations/M17/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="ZSOL_DASHF_SRV_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="ZSOL_DASHF_SRVType" sap:label="Solution Center Dashboard Filled KPI" sap:content-version="1">
+				<Key><PropertyRef Name="param_dat"/><PropertyRef Name="en_date"/></Key><Property Name="param_dat" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="UpperCase" sap:label="CHAR08"/><Property Name="en_date" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="UpperCase"/><Property Name="dt_uid" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="User ID"
+					sap:quickinfo="TRACKER DE USER_ID"/><Property Name="user_fname" Type="Edm.String" MaxLength="40" sap:label="User's Full Name" sap:quickinfo="TRACKER DE USER_FNAME"/><Property Name="FillCount" Type="Edm.Int32"/><NavigationProperty Name="Parameters" Relationship="ZSOL_DASHF_SRV_CDS.assoc_3ABD4129EE3ED8326EBCD5234DC46AF1"
+					FromRole="ToRole_assoc_3ABD4129EE3ED8326EBCD5234DC46AF1" ToRole="FromRole_assoc_3ABD4129EE3ED8326EBCD5234DC46AF1" sap:filterable="false"/></EntityType>
+			<EntityType Name="ZSOL_DASHF_SRVParameters" sap:semantics="parameters" sap:content-version="1">
+				<Key><PropertyRef Name="param_dat"/></Key><Property Name="param_dat" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="UpperCase" sap:parameter="mandatory"
+					sap:label="CHAR08" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="Set" Relationship="ZSOL_DASHF_SRV_CDS.assoc_3ABD4129EE3ED8326EBCD5234DC46AF1"
+					FromRole="FromRole_assoc_3ABD4129EE3ED8326EBCD5234DC46AF1" ToRole="ToRole_assoc_3ABD4129EE3ED8326EBCD5234DC46AF1"/></EntityType>
+			<Association Name="assoc_3ABD4129EE3ED8326EBCD5234DC46AF1" sap:content-version="1"><End Type="ZSOL_DASHF_SRV_CDS.ZSOL_DASHF_SRVParameters" Multiplicity="1" Role="FromRole_assoc_3ABD4129EE3ED8326EBCD5234DC46AF1"/><End Type="ZSOL_DASHF_SRV_CDS.ZSOL_DASHF_SRVType" Multiplicity="*" Role="ToRole_assoc_3ABD4129EE3ED8326EBCD5234DC46AF1"/></Association>
+			<EntityContainer Name="ZSOL_DASHF_SRV_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="ZSOL_DASHF_SRVSet" EntityType="ZSOL_DASHF_SRV_CDS.ZSOL_DASHF_SRVType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="ZSOL_DASHF_SRV" EntityType="ZSOL_DASHF_SRV_CDS.ZSOL_DASHF_SRVParameters" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<AssociationSet Name="assoc_3ABD4129EE3ED8326EBCD5234DC46AF1" Association="ZSOL_DASHF_SRV_CDS.assoc_3ABD4129EE3ED8326EBCD5234DC46AF1"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZSOL_DASHF_SRV" Role="FromRole_assoc_3ABD4129EE3ED8326EBCD5234DC46AF1"/><End EntitySet="ZSOL_DASHF_SRVSet" Role="ToRole_assoc_3ABD4129EE3ED8326EBCD5234DC46AF1"/></AssociationSet>
+			</EntityContainer><atom:link rel="self"
+				href="https://webidecp-p1942750097trial.dispatcher.hanatrial.ondemand.com/destinations/M17/sap/opu/odata/sap/ZSOL_DASHF_SRV_CDS/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version"
+				href="https://webidecp-p1942750097trial.dispatcher.hanatrial.ondemand.com/destinations/M17/sap/opu/odata/sap/ZSOL_DASHF_SRV_CDS/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

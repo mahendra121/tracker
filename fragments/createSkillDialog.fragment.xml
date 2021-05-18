@@ -1,0 +1,22 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+    <Dialog title="Skill" id="skill_dialog">
+        <content>
+            <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4"
+				labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3"
+				columnsL="2" columnsM="2" singleContainerFullSize="false" class="sapUiSizeCompact">
+				<f:content>
+					<core:Title text="Add Skill"/>
+					
+					<Label text="Skill Name"/>
+					<Input id="ipcr_skillName" value="" placeholder="e.g. SAP UI5"/>
+					
+				</f:content>
+			</f:SimpleForm>
+        </content>
+        <buttons>
+        		<Button text="Save" press="onSaveSkillCreate" />
+        		<Button text="Clear" press="onClearSkillCreate" />
+                <Button text="Close" press="onCloseSkillS" />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

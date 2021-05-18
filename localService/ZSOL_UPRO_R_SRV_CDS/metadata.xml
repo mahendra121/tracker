@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:Reference
+		Uri="https://webidecp-p1942966390trial.dispatcher.hanatrial.ondemand.com/destinations/M17/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="ZSOL_UPRO_R_SRV_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="ZSOL_UPRO_R_SRVType" sap:label="Read Service for UPRO" sap:content-version="1">
+				<Key><PropertyRef Name="user_id"/></Key><Property Name="user_id" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative" sap:label="User ID"
+					sap:quickinfo="TRACKER DE USER_ID"/><Property Name="rest_id" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="Rest ID"
+					sap:quickinfo="TRACKER DE REST_ID"/><Property Name="lead_id" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="Lead ID"
+					sap:quickinfo="TRACKER DE LEAD_ID"/><Property Name="skill_id" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="Skill ID"
+					sap:quickinfo="TRACKER DE SKILL_ID"/><Property Name="loca_id" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative" sap:label="Location ID"
+					sap:quickinfo="TRACKER DE LOCA_ID"/><Property Name="user_fname" Type="Edm.String" MaxLength="40" sap:label="User's Full Name" sap:quickinfo="TRACKER DE USER_FNAME"/><Property Name="user_uname" Type="Edm.String" MaxLength="40" sap:label="User Name" sap:quickinfo="TRACKER DE USER_UNAME"/><Property Name="user_email" Type="Edm.String" MaxLength="241" sap:label="E-Mail Address"/><Property Name="rest_name" Type="Edm.String" MaxLength="40" sap:label="Resource Name" sap:quickinfo="TRACKER DE REST_NAME"/><Property Name="lead_name" Type="Edm.String" MaxLength="40" sap:label="Lead Name" sap:quickinfo="TRACKER DE LEAD_NAME"/><Property Name="skill_name" Type="Edm.String" MaxLength="40" sap:label="Skill Name" sap:quickinfo="TRACKER DE SKILL_NAME"/><Property Name="loca_name" Type="Edm.String" MaxLength="40" sap:label="Location Name" sap:quickinfo="TRACKER DE LOCA_NAME"/><Property Name="flag" Type="Edm.String" MaxLength="2" sap:label="FLAG" sap:quickinfo="TRACKER DE FLAG"/></EntityType>
+			<EntityContainer Name="ZSOL_UPRO_R_SRV_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="ZSOL_UPRO_R_SRV" EntityType="ZSOL_UPRO_R_SRV_CDS.ZSOL_UPRO_R_SRVType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/></EntityContainer><atom:link rel="self"
+				href="https://webidecp-p1942966390trial.dispatcher.hanatrial.ondemand.com/destinations/M17/sap/opu/odata/sap/ZSOL_UPRO_R_SRV_CDS/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version"
+				href="https://webidecp-p1942966390trial.dispatcher.hanatrial.ondemand.com/destinations/M17/sap/opu/odata/sap/ZSOL_UPRO_R_SRV_CDS/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

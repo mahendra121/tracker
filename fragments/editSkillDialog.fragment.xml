@@ -1,0 +1,39 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+    <Dialog title="Skill" id="skill_dialog_edit">
+        <content>
+            <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4"
+				labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3"
+				columnsL="2" columnsM="2" singleContainerFullSize="false" class="sapUiSizeCompact">
+				<f:content>
+					<core:Title text="Search Skill"/>
+					
+					<Label text="By Skill"/>
+					<ComboBox
+						id="searchComboSkill"
+						change="onFetchSkill"
+						
+						value=""
+						selectedKey=""
+						width="500px"
+						items="{
+							path: 'DTSkill>/ZSOL_SKILL_SRV',
+							sorter: { path: 'skill_name' }
+						}">
+						<core:ListItem key="{DTSkill>skill_id}" text="{DTSkill>skill_name}" additionalText="{DTSkill>skill_name}" />
+					</ComboBox>
+					<core:Title text="Edit Skill"/>
+					<Label text="Skill ID"/>
+					<Input id="iped_skillid" value="" placeholder="Skill ID" enabled="false" />
+					<Label text="Skill Title"/>
+					<Input id="iped_skillname" value="" placeholder="Skill Name"/>
+				</f:content>
+			</f:SimpleForm>
+        </content>
+        <buttons>
+        		<Button text="Save" press="onEditSkillSave" />
+        		<Button text="Clear" press="onClearSkillEdit" />
+    			<Button text="Delete" press="deletePressSkill" />
+                <Button text="Close" press="onCloseSkillEdit" />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,509 @@
+{
+    "resources": [
+        {
+            "name": "Component-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "controller/Login-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/Login.controller.js"
+        },
+        {
+            "name": "controller/Statistics-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/Statistics.controller.js"
+        },
+        {
+            "name": "controller/View1-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/View1.controller.js"
+        },
+        {
+            "name": "controller/adminDashboard-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/adminDashboard.controller.js"
+        },
+        {
+            "name": "controller/adminEntry-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/adminEntry.controller.js"
+        },
+        {
+            "name": "controller/inactiveLogin-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/inactiveLogin.controller.js"
+        },
+        {
+            "name": "controller/nouserLogin-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/nouserLogin.controller.js"
+        },
+        {
+            "name": "controller/trackerView-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/trackerView.controller.js"
+        },
+        {
+            "name": "css/style-dbg.css",
+            "isDebug": true
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "di.code-validation.core_issues.json"
+        },
+        {
+            "name": "extended_runnable_file.html"
+        },
+        {
+            "name": "fragments/confirmDelete.fragment.xml"
+        },
+        {
+            "name": "fragments/createActivityDialog.fragment.xml"
+        },
+        {
+            "name": "fragments/createLeadDialog.fragment.xml"
+        },
+        {
+            "name": "fragments/createProjectDialog.fragment.xml"
+        },
+        {
+            "name": "fragments/createSkillDialog.fragment.xml"
+        },
+        {
+            "name": "fragments/createUserDialog.fragment.xml"
+        },
+        {
+            "name": "fragments/editActivityDialog.fragment.xml"
+        },
+        {
+            "name": "fragments/editLeadDialog.fragment.xml"
+        },
+        {
+            "name": "fragments/editProjectDialog.fragment.xml"
+        },
+        {
+            "name": "fragments/editSkillDialog.fragment.xml"
+        },
+        {
+            "name": "fragments/editUserDialog.fragment.xml"
+        },
+        {
+            "name": "fragments/trackerExport.fragment.xml"
+        },
+        {
+            "name": "fragments/trackerUserProfile.fragment.xml"
+        },
+        {
+            "name": "fragments/userCopyHelper.fragment.xml"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "libs/FileSaver-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "libs/FileSaver.js"
+        },
+        {
+            "name": "libs/tableexport-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "libs/tableexport.js"
+        },
+        {
+            "name": "libs/xlsx-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "libs/xlsx.js"
+        },
+        {
+            "name": "localService/ZSOL_ACTIVE_USERS_CDS/metadata.xml"
+        },
+        {
+            "name": "localService/ZSOL_ACTI_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "localService/ZSOL_DASHF_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "localService/ZSOL_DASHT_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "localService/ZSOL_DT_DATA_R_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "localService/ZSOL_DT_DATA_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "localService/ZSOL_LEAD_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "localService/ZSOL_LOCA_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "localService/ZSOL_NDATA_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "localService/ZSOL_NSMART_CDS/metadata.xml"
+        },
+        {
+            "name": "localService/ZSOL_PROJECT_ACTIVITY_CDS/metadata.xml"
+        },
+        {
+            "name": "localService/ZSOL_PROJ_HRS_CDS/metadata.xml"
+        },
+        {
+            "name": "localService/ZSOL_PROJ_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "localService/ZSOL_REST_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "localService/ZSOL_SKILL_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "localService/ZSOL_SMART_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "localService/ZSOL_UPRO_R_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "localService/ZSOL_UPRO_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "localService/ZSOL_USER_ACTIVITY_CDS/metadata.xml"
+        },
+        {
+            "name": "localService/ZSOL_USER_CDS_CDS/metadata.xml"
+        },
+        {
+            "name": "localService/ZTRACKER_SRV/metadata.xml"
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "mock/mock.json"
+        },
+        {
+            "name": "model/models-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": "serviceBinding-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "serviceBinding.js"
+        },
+        {
+            "name": "tmp/Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "tmp/Component.js"
+        },
+        {
+            "name": "tmp/controller/Login.controller.js"
+        },
+        {
+            "name": "tmp/controller/Statistics.controller.js"
+        },
+        {
+            "name": "tmp/controller/View1.controller.js"
+        },
+        {
+            "name": "tmp/controller/adminDashboard.controller.js"
+        },
+        {
+            "name": "tmp/controller/adminEntry.controller.js"
+        },
+        {
+            "name": "tmp/controller/inactiveLogin.controller.js"
+        },
+        {
+            "name": "tmp/controller/nouserLogin.controller.js"
+        },
+        {
+            "name": "tmp/controller/trackerView.controller.js"
+        },
+        {
+            "name": "tmp/css/style.css"
+        },
+        {
+            "name": "tmp/extended_runnable_file.html"
+        },
+        {
+            "name": "tmp/fragments/confirmDelete.fragment.xml"
+        },
+        {
+            "name": "tmp/fragments/createActivityDialog.fragment.xml"
+        },
+        {
+            "name": "tmp/fragments/createLeadDialog.fragment.xml"
+        },
+        {
+            "name": "tmp/fragments/createProjectDialog.fragment.xml"
+        },
+        {
+            "name": "tmp/fragments/createSkillDialog.fragment.xml"
+        },
+        {
+            "name": "tmp/fragments/createUserDialog.fragment.xml"
+        },
+        {
+            "name": "tmp/fragments/editActivityDialog.fragment.xml"
+        },
+        {
+            "name": "tmp/fragments/editLeadDialog.fragment.xml"
+        },
+        {
+            "name": "tmp/fragments/editProjectDialog.fragment.xml"
+        },
+        {
+            "name": "tmp/fragments/editSkillDialog.fragment.xml"
+        },
+        {
+            "name": "tmp/fragments/editUserDialog.fragment.xml"
+        },
+        {
+            "name": "tmp/fragments/trackerExport.fragment.xml"
+        },
+        {
+            "name": "tmp/fragments/trackerUserProfile.fragment.xml"
+        },
+        {
+            "name": "tmp/fragments/userCopyHelper.fragment.xml"
+        },
+        {
+            "name": "tmp/i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "tmp/index.html"
+        },
+        {
+            "name": "tmp/libs/FileSaver.js"
+        },
+        {
+            "name": "tmp/libs/tableexport.js"
+        },
+        {
+            "name": "tmp/libs/xlsx.js"
+        },
+        {
+            "name": "tmp/localService/ZSOL_ACTIVE_USERS_CDS/metadata.xml"
+        },
+        {
+            "name": "tmp/localService/ZSOL_ACTI_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "tmp/localService/ZSOL_DASHF_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "tmp/localService/ZSOL_DASHT_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "tmp/localService/ZSOL_DT_DATA_R_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "tmp/localService/ZSOL_DT_DATA_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "tmp/localService/ZSOL_LEAD_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "tmp/localService/ZSOL_LOCA_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "tmp/localService/ZSOL_NDATA_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "tmp/localService/ZSOL_NSMART_CDS/metadata.xml"
+        },
+        {
+            "name": "tmp/localService/ZSOL_PROJECT_ACTIVITY_CDS/metadata.xml"
+        },
+        {
+            "name": "tmp/localService/ZSOL_PROJ_HRS_CDS/metadata.xml"
+        },
+        {
+            "name": "tmp/localService/ZSOL_PROJ_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "tmp/localService/ZSOL_REST_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "tmp/localService/ZSOL_SKILL_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "tmp/localService/ZSOL_SMART_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "tmp/localService/ZSOL_UPRO_R_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "tmp/localService/ZSOL_UPRO_SRV_CDS/metadata.xml"
+        },
+        {
+            "name": "tmp/localService/ZSOL_USER_ACTIVITY_CDS/metadata.xml"
+        },
+        {
+            "name": "tmp/localService/ZSOL_USER_CDS_CDS/metadata.xml"
+        },
+        {
+            "name": "tmp/localService/ZTRACKER_SRV/metadata.xml"
+        },
+        {
+            "name": "tmp/localService/metadata.xml"
+        },
+        {
+            "name": "tmp/manifest.json"
+        },
+        {
+            "name": "tmp/mock/mock.json"
+        },
+        {
+            "name": "tmp/model/models.js"
+        },
+        {
+            "name": "tmp/serviceBinding.js"
+        },
+        {
+            "name": "tmp/view/Login.view.xml"
+        },
+        {
+            "name": "tmp/view/Statistics.view.xml"
+        },
+        {
+            "name": "tmp/view/View1.view.xml"
+        },
+        {
+            "name": "tmp/view/adminDashboard.view.xml"
+        },
+        {
+            "name": "tmp/view/adminEntry.view.xml"
+        },
+        {
+            "name": "tmp/view/inactiveLogin.view.xml"
+        },
+        {
+            "name": "tmp/view/nouserLogin.view.xml"
+        },
+        {
+            "name": "tmp/view/trackerView.view.xml"
+        },
+        {
+            "name": "tmp-dbg/Component.js"
+        },
+        {
+            "name": "tmp-dbg/controller/Login.controller.js"
+        },
+        {
+            "name": "tmp-dbg/controller/Statistics.controller.js"
+        },
+        {
+            "name": "tmp-dbg/controller/View1.controller.js"
+        },
+        {
+            "name": "tmp-dbg/controller/adminDashboard.controller.js"
+        },
+        {
+            "name": "tmp-dbg/controller/adminEntry.controller.js"
+        },
+        {
+            "name": "tmp-dbg/controller/inactiveLogin.controller.js"
+        },
+        {
+            "name": "tmp-dbg/controller/nouserLogin.controller.js"
+        },
+        {
+            "name": "tmp-dbg/controller/trackerView.controller.js"
+        },
+        {
+            "name": "tmp-dbg/css/style.css"
+        },
+        {
+            "name": "tmp-dbg/libs/FileSaver.js"
+        },
+        {
+            "name": "tmp-dbg/libs/tableexport.js"
+        },
+        {
+            "name": "tmp-dbg/libs/xlsx.js"
+        },
+        {
+            "name": "tmp-dbg/model/models.js"
+        },
+        {
+            "name": "tmp-dbg/serviceBinding.js"
+        },
+        {
+            "name": "view/Login.view.xml"
+        },
+        {
+            "name": "view/Statistics.view.xml"
+        },
+        {
+            "name": "view/View1.view.xml"
+        },
+        {
+            "name": "view/adminDashboard.view.xml"
+        },
+        {
+            "name": "view/adminEntry.view.xml"
+        },
+        {
+            "name": "view/inactiveLogin.view.xml"
+        },
+        {
+            "name": "view/nouserLogin.view.xml"
+        },
+        {
+            "name": "view/trackerView.view.xml"
+        }
+    ]
+}

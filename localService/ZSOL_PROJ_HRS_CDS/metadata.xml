@@ -1,0 +1,23 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZSOL_PROJ_HRS_CDS" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="ZSOL_PROJ_HRSType" sap:label="Total hours given to a project" sap:content-version="1">
+				<Key><PropertyRef Name="p_sDate"/><PropertyRef Name="p_eDate"/><PropertyRef Name="proj_name"/></Key><Property Name="p_sDate" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="UpperCase" sap:label="CHAR08"/><Property Name="p_eDate" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="UpperCase" sap:label="CHAR08"/><Property Name="proj_name" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Project Name" sap:quickinfo="TRACKER DE PROJ_NAME"/><Property Name="Hrs" Type="Edm.Double"/><NavigationProperty Name="Parameters" Relationship="ZSOL_PROJ_HRS_CDS.assoc_F767FD73F3D7FF3C35EE33EB65AED157"
+					FromRole="ToRole_assoc_F767FD73F3D7FF3C35EE33EB65AED157" ToRole="FromRole_assoc_F767FD73F3D7FF3C35EE33EB65AED157" sap:filterable="false"/></EntityType>
+			<EntityType Name="ZSOL_PROJ_HRSParameters" sap:semantics="parameters" sap:content-version="1">
+				<Key><PropertyRef Name="p_sDate"/><PropertyRef Name="p_eDate"/></Key><Property Name="p_sDate" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="UpperCase" sap:parameter="mandatory"
+					sap:label="CHAR08" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="p_eDate" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="UpperCase" sap:parameter="mandatory"
+					sap:label="CHAR08" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="Set" Relationship="ZSOL_PROJ_HRS_CDS.assoc_F767FD73F3D7FF3C35EE33EB65AED157"
+					FromRole="FromRole_assoc_F767FD73F3D7FF3C35EE33EB65AED157" ToRole="ToRole_assoc_F767FD73F3D7FF3C35EE33EB65AED157"/></EntityType>
+			<Association Name="assoc_F767FD73F3D7FF3C35EE33EB65AED157" sap:content-version="1"><End Type="ZSOL_PROJ_HRS_CDS.ZSOL_PROJ_HRSParameters" Multiplicity="1" Role="FromRole_assoc_F767FD73F3D7FF3C35EE33EB65AED157"/><End Type="ZSOL_PROJ_HRS_CDS.ZSOL_PROJ_HRSType" Multiplicity="*" Role="ToRole_assoc_F767FD73F3D7FF3C35EE33EB65AED157"/></Association>
+			<EntityContainer Name="ZSOL_PROJ_HRS_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="ZSOL_PROJ_HRSSet" EntityType="ZSOL_PROJ_HRS_CDS.ZSOL_PROJ_HRSType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="ZSOL_PROJ_HRS" EntityType="ZSOL_PROJ_HRS_CDS.ZSOL_PROJ_HRSParameters" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<AssociationSet Name="assoc_F767FD73F3D7FF3C35EE33EB65AED157" Association="ZSOL_PROJ_HRS_CDS.assoc_F767FD73F3D7FF3C35EE33EB65AED157"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZSOL_PROJ_HRS" Role="FromRole_assoc_F767FD73F3D7FF3C35EE33EB65AED157"/><End EntitySet="ZSOL_PROJ_HRSSet" Role="ToRole_assoc_F767FD73F3D7FF3C35EE33EB65AED157"/></AssociationSet>
+			</EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZSOL_PROJ_HRS_CDS/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZSOL_PROJ_HRS_CDS/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

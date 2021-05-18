@@ -1,0 +1,39 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+    <Dialog title="Project" id="proj_dialog_edit">
+        <content>
+            <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4"
+				labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3"
+				columnsL="2" columnsM="2" singleContainerFullSize="false" class="sapUiSizeCompact">
+				<f:content>
+					<core:Title text="Search Project"/>
+					
+					<Label text="By Project"/>
+					<ComboBox
+						id="searchComboProj"
+						change="onFetchProj"
+						
+						value=""
+						selectedKey=""
+						width="500px"
+						items="{
+							path: 'DTProject>/ZSOL_PROJ_SRV',
+							sorter: { path: 'proj_name' }
+						}">
+						<core:ListItem key="{DTProject>proj_id}" text="{DTProject>proj_name}" additionalText="{DTProject>proj_name}" />
+					</ComboBox>
+					<core:Title text="Edit Project"/>
+					<Label text="Project ID"/>
+					<Input id="iped_projid" value="" placeholder="Project ID" enabled="false" />
+					<Label text="Project Title"/>
+					<Input  id="iped_projname" value="" placeholder="Project Name"/>
+				</f:content>
+			</f:SimpleForm>
+        </content>
+        <buttons>
+        		<Button text="Save" press="onEditProjSave" />
+        		<Button text="Clear" press="onClearProjEdit" />
+        		<Button text="Delete" press="deletePressProject" />
+                <Button text="Close" press="onCloseProjEdit" />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,62 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" >
+    <Dialog title="User profile" id="user_dialog" contentWidth="1000px" >
+        <content>
+            <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4"
+				labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3"
+				columnsL="2" columnsM="2" singleContainerFullSize="false" class="sapUiSizeCompact">
+				<f:content>
+					<core:Title text="Basic Profile"/>
+					<Label text="CORP username"/>
+					<Input id="ipcr_username" value="" placeholder="e.g. johndoe"/>
+					<Label text="Employee ID"/>
+					
+					<Input id="ipcr_userid" value="" placeholder="e.g. 147147"/>
+					<Label text="Email"/>
+					<Input id="ipcr_email" value="" placeholder="user@capgemini.com"></Input>
+					<Label text="First Name"/>
+					<Input id="ipcr_fname" value="" placeholder="John"></Input>
+					
+					<Label text="Last Name"/>
+					<Input id="ipcr_lname" value="" placeholder="Doe"></Input>
+					<core:Title text="Profile Attributes"/>
+					<Label text="Primary Skill"/>
+					<Select id="ipcr_userskill" items="{path: 'DTSkill>/ZSOL_SKILL_SRV',
+							sorter: { path: 'skill_name' }}">
+						<core:Item key="{DTSkill>skill_id}" text="{DTSkill>skill_name}"/>
+					</Select>
+					<Label text="Lead"/>
+					<Select id="ipcr_userlead" items="{path: 'DTLead>/ZSOL_LEAD_SRV',
+							sorter: { path: 'lead_name' }}">
+						<core:Item key="{DTLead>lead_id}" text="{DTLead>lead_name}"/>
+					</Select>
+					<Label text="Resource Status"/>
+					
+					<Select id="ipcr_userrest" items="{path: 'DTResource>/ZSOL_REST_SRV',
+							sorter: { path: 'rest_name' }}">
+						<core:Item key="{DTResource>rest_id}" text="{DTResource>rest_name}"/>
+					</Select>
+					<Label text="Location"/>
+					<Select id="ipcr_userloca" items="{path: 'DTLocation>/ZSOL_LOCA_SRV',
+							sorter: { path: 'loca_name' }}">
+						<core:Item key="{DTLocation>loca_id}" text="{DTLocation>loca_name}"/>
+					</Select>
+					
+					<Label text="Valid From"/>
+					<DatePicker id="ipcr_validFrom" value="" placeholder="DD/MM/YYYY" ></DatePicker>
+					
+					<core:Title text="Miscellaneous information"/>
+					<Label text="Status"/>
+					<Switch id="ipcr_userstate" state="true" />
+					
+					<Label text="Admin"/>
+					<Switch id="ipcr_adminstate" state="false" />
+				</f:content>
+			</f:SimpleForm>
+        </content>
+        <buttons>
+        		<Button text="Save" press="onSaveUserCreate" />
+        		<Button text="Clear" press="onClearUserCreate" />
+                <Button text="Close" press="onCloseUserS" />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

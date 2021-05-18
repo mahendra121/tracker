@@ -1,0 +1,72 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="TrackerEntry.TrackerEntry.controller.Login"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App id="loginapp">
+		<pages>
+			<Page title="SAP SOLUTION CENTER">
+				<Panel id="panel1">
+					<headerToolbar>
+						<Toolbar>
+							<Title level="H1" text="LOGIN PAGE"/>
+						</Toolbar>
+					</headerToolbar>
+					<FlexBox width="100%" alignItems="Center" justifyContent="Center">
+						<items>
+							<Label text="User :" design="Bold" class="sapUiLargeMarginEnd" textAlign="Right"></Label>
+							<Input id="user" class="sapUiSmallMarginEnd"></Input>
+						</items>
+					</FlexBox>
+					<FlexBox>
+						<Label></Label>
+					</FlexBox>
+					<FlexBox width="100%" alignItems="Center" justifyContent="Center">
+						<items>
+							<Label text="Password :" design="Bold" class="sapUiSmallMarginEnd" textAlign="Right"></Label>
+							<Input id="pass" type="Password" class="sapUiSmallMarginEnd"></Input>
+						</items>
+					</FlexBox>
+					<FlexBox>
+						<Label></Label>
+					</FlexBox>
+					<FlexBox width="100%" alignItems="Center" justifyContent="Center">
+						<Button id="btn1" text="Sign In" press="onSignin" type="Emphasized" class="sapUiLargeMarginEnd" width="100%"></Button>
+					</FlexBox>
+				</Panel>
+				<!--<Panel expandable ="true">-->
+				<!--	<FlexBox-->
+				<!--		height="100px"-->
+				<!--		alignItems="Start"-->
+				<!--		justifyContent="Start">-->
+				<!--		<items>-->
+				<!--			<Label text="User:"  class="sapUiSmallMarginEnd" />-->
+				<!--		   	<Input id ="input3"-->
+				<!--				   value =""-->
+				<!--			       class = "sapUiSmallMarginEnd">-->
+				<!--			</Input>-->
+				<!--		</items>-->
+				<!--	</FlexBox>-->
+				<!--	<FlexBox><Label></Label></FlexBox>-->
+				<!--	<FlexBox-->
+				<!--	height="100px"-->
+				<!--	alignItems="Start"-->
+				<!--	justifyContent="Start">-->
+				<!--	<items>-->
+				<!--		<Label text="User:"  class="sapUiSmallMarginEnd" />-->
+				<!--	  	<Input id ="input4"-->
+				<!--				   value =""-->
+				<!--			       class = "sapUiSmallMarginEnd">-->
+				<!--		</Input>-->
+				<!--	</items>-->
+				<!--</FlexBox>-->
+				<!--	<FlexBox><Label></Label></FlexBox>-->
+				<!--<Button id ="btn2"-->
+				<!--	        text = "Sign In"-->
+				<!--	        press = "onSignin"-->
+				<!--	        type = "Emphasized"-->
+				<!--	        class = "sapUiLargeMarginEnd"-->
+				<!--	        width ="15%"-->
+				<!--	        ></Button>	-->
+				<!--</Panel>-->
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,54 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" >
+    <Dialog title="Settings" id="tracker_profile_edit" contentWidth="1000px" >
+        <content>
+        	<MessageStrip
+			type="Info"
+			showIcon="true"
+			text="Ask your administrator for changes to profile!"
+			class="sapUiMediumMargin"/>
+            <f:SimpleForm id="tracker_profile" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4"
+				labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3"
+				columnsL="2" columnsM="2" singleContainerFullSize="false" class="sapUiSizeCompact">
+				<f:content>
+					<core:Title text="CORP Profile"/>
+					<Label text="CORP ID"/>
+					<Input id="tred_username" enabled="false" value="" placeholder="johndoe"></Input>
+					<Label text="Employee ID"/>
+					<Input id="tred_userid" enabled="false" value="" placeholder="123123"></Input>
+					<Label text="First Name"/>
+					<Input enabled="false"  id="tred_fname" value="" placeholder="John"></Input>
+					<Label text="Last Name"/>
+					<Input enabled="false" id="tred_lname" value="" placeholder="Doe"></Input>
+					
+					<core:Title text="Basic Profile"/>
+					<Label text="Primary Skill"/>
+					<Select  enabled="false"  id="tred_userskill" items="{path: 'DTSkill>/ZSOL_SKILL_SRV',
+							sorter: { path: 'skill_name' }}">
+						<core:Item key="{DTSkill>skill_id}" text="{DTSkill>skill_name}"/>
+					</Select>
+					<Label text="Lead"/>
+					<Select enabled="false" id="tred_userlead" items="{path: 'DTLead>/ZSOL_LEAD_SRV',
+							sorter: { path: 'lead_name' }}">
+						<core:Item key="{DTLead>lead_id}" text="{DTLead>lead_name}"/>
+					</Select>
+					<Label text="Resource Status"/>
+					
+					<Select enabled="false" id="tred_userrest" items="{path: 'DTResource>/ZSOL_REST_SRV',
+							sorter: { path: 'rest_name' }}">
+						<core:Item key="{DTResource>rest_id}" text="{DTResource>rest_name}"/>
+					</Select>
+					<Label text="Location"/>
+					<Select enabled="false" id="tred_userloca" items="{path: 'DTLocation>/ZSOL_LOCA_SRV',
+							sorter: { path: 'loca_name' }}">
+						<core:Item key="{DTLocation>loca_id}" text="{DTLocation>loca_name}"/>
+					</Select>
+					
+				</f:content>
+			</f:SimpleForm>
+        </content>
+        <buttons>
+        		<Button text="Save" press="onTrackerUserSave" type="Emphasized" enabled="false" />
+                <Button text="Cancel" press="onClose" />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

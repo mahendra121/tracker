@@ -1,0 +1,26 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" >
+    <Dialog title="Copy Wizard" id="copy_helper" >
+        <content>
+           <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4"
+				labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3"
+				columnsL="2" columnsM="2" singleContainerFullSize="false" class="sapUiSizeCompact">
+				<f:content>
+					<core:Title text="Pick a date to copy"/>
+					<Label text="from:"/>
+					<DatePicker xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" 
+					width="auto" id="pickerCopyHelper" valueFormat="dd/MM/yyyy" displayFormat="dd/MM/yyyy" change="onCopyPressHelper" />
+					
+				
+					
+					
+					</f:content>
+			</f:SimpleForm>	
+			
+        </content>
+        <buttons>
+        		<Button text="Copy" press="onCopyPressHelper" type="Emphasized" />	
+    			<Button text="Cancel" type="Reject" press="onClose" />
+                
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

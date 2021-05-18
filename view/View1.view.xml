@@ -1,0 +1,212 @@
+	<mvc:View controllerName="TrackerEntry.TrackerEntry.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m" 
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:smartTable="sap.ui.comp.smarttable" height="100%">
+		<Page id="admin_page" title="Time-Tracker Admin" class="sapUiNoContentPadding" showNavButton="false">
+		<customHeader>
+			<Toolbar id="toolbar1">
+				<Label id="welcomeLabel" text="Welcome, John Doe"/>
+				<ToolbarSpacer/>
+				<Title text="Time-Tracker Admin"/>
+				<ToolbarSpacer/>
+				<Button text="Logoff" icon="sap-icon://log" press="logoff"/>
+			</Toolbar>
+		</customHeader>
+		<subHeader>
+			
+		</subHeader>
+		<content>
+			<IconTabBar id="idIconTabBar" select="handleIconTabBarSelect" showOverflowSelectList="true" enableTabReordering="true"
+					stretchContentHeight="false" expandable="false" class="sapUiNoContentPadding">
+				<items>
+					<IconTabFilter icon="sap-icon://bbyd-dashboard" iconColor="Positive" count="{/ProductCollectionStats/Counts/Total}" text="Dashboard"
+						key="dashboard">
+						<mvc:XMLView viewName="TrackerEntry.TrackerEntry.view.adminDashboard"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://filter-analytics" iconColor="Positive" count="{/ProductCollectionStats/Counts/Total}" text="Statistics"
+						key="statistics">
+						<mvc:XMLView viewName="TrackerEntry.TrackerEntry.view.Statistics"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://timesheet" iconColor="Positive" count="{/ProductCollectionStats/Counts/Weight/Overweight}" text="Reports"
+						key="reports">
+						<smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="ZSOL_NSMART" class="sapUiSizeCompact">
+							<smartFilterBar:controlConfiguration>
+								<smartFilterBar:ControlConfiguration key="dt_cdat" visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="false"></smartFilterBar:ControlConfiguration>
+								<smartFilterBar:ControlConfiguration key="dt_uid" visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="false" ></smartFilterBar:ControlConfiguration>
+								<!--<smartFilterBar:ControlConfiguration key="user_fname" visibleInAdvancedArea="true"></smartFilterBar:ControlConfiguration>-->
+								<smartFilterBar:ControlConfiguration key="proj_id" visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="false"></smartFilterBar:ControlConfiguration>
+								<smartFilterBar:ControlConfiguration key="acti_id" visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="false"></smartFilterBar:ControlConfiguration>
+								<smartFilterBar:ControlConfiguration key="skill_id" visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="false"></smartFilterBar:ControlConfiguration>
+								<smartFilterBar:ControlConfiguration key="rest_id" visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="false"></smartFilterBar:ControlConfiguration>
+								<smartFilterBar:ControlConfiguration key="loca_id" visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="false"></smartFilterBar:ControlConfiguration>
+								<smartFilterBar:ControlConfiguration key="lead_id" visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="false"></smartFilterBar:ControlConfiguration>
+							</smartFilterBar:controlConfiguration>
+							<!--layout data used to make the table growing but the filter bar fixed -->
+							<smartFilterBar:layoutData>
+								<FlexItemData shrinkFactor="2"/>
+							</smartFilterBar:layoutData>
+						</smartFilterBar:SmartFilterBar>
+						<smartTable:SmartTable id="SmartTable" entitySet="ZSOL_NSMART" smartFilterId="smartFilterBar" tableType="ResponsiveTable"
+							useExportToExcel="true" initiallyVisibleFields="dt_uid,fname,proj_name,acti_name,dt_hrs,dt_comm,skill_name,lead_name,rest_name,loca_name,dt_cdat"
+							useVariantManagement="true" useTablePersonalisation="true" header="Daily Tracker Entries" showRowCount="true" enableAutoBinding="true"
+							class="sapUiResponsiveContentPadding sapUiSizeCompact" >
+							<!-- layout data used to make the table growing but the filter bar fixed -->
+							<smartTable:layoutData>
+								<FlexItemData growFactor="3" baseSize="0%"/>
+							</smartTable:layoutData>
+						</smartTable:SmartTable>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://work-history" iconColor="Positive" count="{/ProductCollectionStats/Counts/Weight/Overweight}"
+						text="Admin Entry" key="admin_entry">
+						<mvc:XMLView viewName="TrackerEntry.TrackerEntry.view.adminEntry"/>
+					</IconTabFilter>
+					<IconTabSeparator />
+					<IconTabFilter icon="sap-icon://add-product" iconColor="Default" count="{/ProductCollectionStats/Counts/Weight/Ok}" text="Project Master"
+						key="project_master">
+				
+						<Table headerText="Project Master" id="Projecttable"  growing="false" items="{path: 'DTProject>/ZSOL_PROJ_SRV',
+							sorter: { path: 'proj_name' }}" 
+								class="sapUiSizeCompact">
+							<columns>
+								<Column><ObjectIdentifier title="Project Id"></ObjectIdentifier></Column>
+								<Column><ObjectIdentifier title="Project Name"/></Column>
+								<Column><ObjectIdentifier visible="false" title="Act"/></Column>
+								<Column><ObjectIdentifier title="Toggle"/></Column>
+							</columns>
+							<items>
+								<ColumnListItem id="projTableTemplate">
+									<cells>
+										<Text text="{DTProject>proj_id}"/>
+										<Text text="{DTProject>proj_name}"/>
+										<Text visible="false" text="{DTProject>flag}"/>
+										<Switch change="setProjState" state="{= ${DTProject>flag} &lt;= '0' ? false : true }"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://add-activity" iconColor="Default" count="{/ProductCollectionStats/Counts/Weight/Heavy}"
+						text="Activity Master" key="activity_master">
+					
+						<Table headerText="Activity Details" id="Activitytable" items="{path: 'DTActivity>/ZSOL_ACTI_SRV',
+							sorter: { path: 'acti_name' }}"
+							class="sapUiSizeCompact" growing="false">
+							<columns>
+								<Column><ObjectIdentifier title = "Activity Id"></ObjectIdentifier></Column>
+								<Column><ObjectIdentifier title="Activity Name"/></Column>
+								<Column><ObjectIdentifier visible="false" title="Act"/></Column>
+								<Column><ObjectIdentifier title="Toggle"/></Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{DTActivity>acti_id}"></Text>
+										<Text text="{DTActivity>acti_name}"/>
+										<Text visible="false" text="{DTActivity>flag}" />
+										<Switch	change="setActiState" state="{=	${DTActivity>flag} &lt;= '0' ? false : true }" />
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://leads" iconColor="Default" count="{/ProductCollectionStats/Counts/Weight/Heavy}" text="Lead Master"
+						key="lead_master">
+						
+						<Table headerText="Leads" id="leadtable" items="{path: 'DTLead>/ZSOL_LEAD_SRV',
+							sorter: { path: 'lead_name' }}" 
+							class="sapUiSizeCompact" growing="false">
+							<columns>
+								<Column><ObjectIdentifier title="Lead Id"/></Column>
+								<Column><ObjectIdentifier title="Lead Name"/></Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{DTLead>lead_id}"/>
+										<Text text="{DTLead>lead_name}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://badge" iconColor="Default" count="{/ProductCollectionStats/Counts/Weight/Heavy}" text="Skills Master"
+						key="skills_master">
+					
+						<Table headerText="Skills" id="skillstable" items="{path: 'DTSkill>/ZSOL_SKILL_SRV',
+							sorter: { path: 'skill_name' }}"
+								class="sapUiSizeCompact" growing="false">
+							<columns>
+								<Column><ObjectIdentifier title="Skill Name"/></Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{DTSkill>skill_name}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://user-edit" iconColor="Default" count="{/ProductCollectionStats/Counts/Weight/Overweight}" text="User Profiles"
+						key="users">
+					
+						<Table headerText="Users" id="Usertable" items="{path: 'DTHeaderRead>/ZSOL_UPRO_R_SRV',
+							sorter: { path: 'user_fname' },
+							filters: {
+					            path: 'flag',
+					            operator: 'NE',
+					            value1: '0'
+        					}}"
+							class="sapUiSizeCompact" growing="false">
+							<columns>
+								<Column><ObjectIdentifier title="Employee Id"/></Column>
+								<Column><ObjectIdentifier title="Employee Name"/></Column>
+								<Column><ObjectIdentifier title="Lead"/></Column>
+								<Column><ObjectIdentifier title="Email"/></Column>
+								<Column><ObjectIdentifier title="Delete"/></Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{DTHeaderRead>user_id}"/>
+										<Text text="{DTHeaderRead>user_fname}"/>
+										<Text text="{DTHeaderRead>lead_name}"/>
+										<Text text="{DTHeaderRead>user_email}"/>
+										<Button icon="sap-icon://delete" type="Reject" press="quickDeleteConfirm"/>
+										<!--<Text text="{DTHeaderRead>flag}"/>-->
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					
+				</items>
+			</IconTabBar>
+		
+		</content>
+		<footer>
+			<Toolbar id="footerToolbar" visible="false">
+				<ToolbarSpacer/>
+				
+				<Button id="newBtnProj" text="New" type="Accept" press="newPressProject" visible="{= ${/State} === 'proj' }"/>
+				<Button id="newBtnActi" text="New" type="Accept" press="newPressActivity" visible="{= ${/State} === 'acti' }"/>
+				<Button id="newBtnLead" text="New" type="Accept" press="newPressLead" visible="{= ${/State} === 'lead' }"/>
+				<Button id="newBtnSkill" text="New" type="Accept" press="newPressSkill" visible="{= ${/State} === 'skill' }"/>
+				<Button id="newBtnUser" text="New" type="Accept" press="newPressUser" visible="{= ${/State} === 'user' }"/>
+				
+				<Button id="editBtnProj" text="Edit" type="Emphasized" visible="{= ${/State} === 'proj' }" press="editPressProject"/>
+				<Button id="editBtnActi" text="Edit" type="Emphasized" visible="{= ${/State} === 'acti' }" press="editPressActivity"/>
+				<Button id="editBtnLead" text="Edit" type="Emphasized" visible="{= ${/State} === 'lead' }" press="editPressLead"/>
+				<Button id="editBtnSkill" text="Edit" type="Emphasized" visible="{= ${/State} === 'skill' }" press="editPressSkill"/>
+				<Button id="editBtnUser" text="Edit" type="Emphasized" visible="{= ${/State} === 'user' }" press="editPressUser"/>
+				
+				<!--<Button id="deleteBtnProj" text="Delete" type="Reject" visible="{= ${/State} === 'proj' }" press="deletePressProject"/>-->
+				<!--<Button id="deleteBtnActi" text="Delete" type="Reject" visible="{= ${/State} === 'acti' }" press="deletePressActivity"/>-->
+				<!--<Button id="deleteBtnLead" text="Delete" type="Reject" visible="{= ${/State} === 'lead' }" press="deletePressLead"/>-->
+				<!--<Button id="deleteBtnSkill" text="Delete" type="Reject" visible="{= ${/State} === 'skill' }" press="deletePressSkill"/>-->
+				<!--<Button id="deleteBtnUser" text="Delete" type="Reject" visible="{= ${/State} === 'user' }" press="deletePressUser"/>-->
+				
+				<ToolbarSpacer/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

@@ -1,0 +1,26 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+    <Dialog title="Project" id="proj_dialog">
+        <content>
+            <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4"
+				labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3"
+				columnsL="2" columnsM="2" singleContainerFullSize="false" class="sapUiSizeCompact">
+				<f:content>
+					<core:Title text="Add Project"/>
+					<Label text="Project Title"/>
+					<Input id="ipcr_ProjName" value="" placeholder="e.g. AutoPath"/>
+					<!--<Label text="Short Description"/>-->
+					<!--<Input id="ipcr_ProjDesc" value="" placeholder="Description"></Input>-->
+					<!--<Label text="Valid From"/>-->
+					<!--<DatePicker id="ipcr_ProjSDate"></DatePicker>-->
+					<!--<Label text="Valid Till"/>-->
+					<!--<DatePicker id="ipcr_ProjEDate"></DatePicker>-->
+				</f:content>
+			</f:SimpleForm>
+        </content>
+        <buttons>
+        		<Button text="Save" press="onSaveProjCreate" />
+        		<Button text="Clear" press="onClearProjCreate" />
+                <Button text="Close" press="onCloseProjS" />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>
